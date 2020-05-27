@@ -2,6 +2,10 @@
 // 文字コード設定
 header('Content-Type: text/json; charset=UTF-8');
 
+$connection = pg_connect("host=db dbname=postgres user=postgres password=password");
+$arr['pg'] = pg_version($connection)['client'];
+pg_close($connection);
+
 $arr["major"] = 0;
 $arr["minor"] = 0;
 $arr["revision"] = 1;

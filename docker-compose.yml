@@ -11,7 +11,7 @@ services:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
 
   php:
-    image: php:7-fpm-alpine
+    image: m5d215/php-fpm-postgres:7-stretch
     restart: unless-stopped
     volumes:
       - ./src:/var/www/html:ro

@@ -1,0 +1,27 @@
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    width: 490px;
+  }
+  
+  table th{
+    text-align: center;
+    padding: 7px 0;
+    border-right:solid 1px #ddd;
+    border-left:solid 1px #ddd;    
+    background-color: #EE3B2C;
+    width: 155px;
+  }
+  
+
+  table td {
+    text-align: center;
+    padding: 7px 0;
+    width: 155px;
+    border-right:solid 1px #ddd;
+    border-left:solid 1px #ddd;
+      
+  }
+  
+ 

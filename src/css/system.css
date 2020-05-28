@@ -1,0 +1,75 @@
+
+.header_01 {
+    height: 60px;
+    width: 100%;
+    padding: 15px 0;
+    background-color: #1F0F83;;
+  }
+
+.header_02 {
+    height: 60px;
+    width: 100%;
+    padding: 15px 0;
+    background-color: #EE3B2C;
+}
+
+  
+.header_title {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    color: #ffffff;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+}
+
+.button {
+    /* Button */
+
+font-family: Noto Sans JP;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 16px;
+/* identical to box height, or 114% */
+
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Primary */
+
+color: #1F0F83;
+}
+
+.register_button {
+    position: absolute;
+    width: 130px;
+    height: 40px;
+    right: 27px;
+    top: 35px;
+}
+
+.sidebar {
+    width: 320px;
+}
+
+.sidebar_item {
+    font-family: Open Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 24px;
+color: #828282;
+}
+
+.sidebar_item_fixed {
+    position: absolute;
+width: 90px;
+height: 24px;
+left: 15px;
+bottom: 46px;
+
+}

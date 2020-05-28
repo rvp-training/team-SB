@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head></head>
+<head>
+         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+              <link href="http://localhost/css/system.css" rel="stylesheet" type="text/css" />
+     
+</head>
 <body>
-    <?php include('../components/header.php'); ?>
-    <h1>メインページです</h1>
+    <?php include('../components/posts/header.php'); ?>
+    <h1>test用のページです</h1>
     <a href="http://localhost/pages/login">ログイン</a>
     <p>
         <?php

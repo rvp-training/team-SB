@@ -1,14 +1,12 @@
 <!-- 一般ユーザー用サイドバーです -->
-<div class="container">
-  <main class="main">
-    <!-- メインコンテンツ -->
-  </main>
-  <div class="sidebar">
-    <div class="sidebar__item">
-      <!-- 中身 -->
+<div class="sidebar">
+    <div class="sidebar_item">
+        <li>
+         <ul>ビジネス</ul>
+         <ul>プライベート</ul>
+        </li>
+        <div class="sidebar_item_fixed">
+            <a href="/logout APIを呼び出す処理">ログアウト</a>
+        </div>
     </div>
-    <div class="sidebar__item sidebar__item--fixed">
-      <!-- 固定・追従させたいエリア -->
-    </div>
-  </div>
 </div>

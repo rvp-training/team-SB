@@ -1,3 +1,7 @@
 <header>
-    これは管理者用ヘッダーです
+    <div class="header_02">
+        <div class="header_title">
+        System
+        </div>
+    </div>
 </header>

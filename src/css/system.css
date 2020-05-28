@@ -1,0 +1,106 @@
+.login_bg {
+    height: 100vh;
+    width: 100vh;
+    background-color: rgba(31, 15, 131, 0.49);
+}
+
+.login_button{
+    font-family: Noto Sans JP;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    color: #ffffff;
+}
+
+
+.header_01 {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 60px;
+    width: 100%;
+    background-color: #1F0F83;;
+  }
+
+.header_02 {
+    position: fixed;
+    top: 0px;
+    left : 0px;
+    height: 60px;
+    width: 100%;
+    background-color: #EE3B2C;
+}
+
+  
+.header_title {
+    position: absolute;
+    left: 25px;
+    top: 12px;
+    color: #ffffff;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+}
+
+
+.register_button {
+    position: absolute;
+    width: 60px;
+    height: 20px;
+    right: 27px;
+    top: 10px;
+    font-family: Noto Sans JP;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 10px 10px;
+    color: #1F0F83;
+    background-color: #ffffff;
+    border-radius: 6px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    width: 180px;
+    height: 100vh;
+    background-color: #ffffff;
+    border: 2px solid rgba(0, 0, 0, 0.16);
+    box-sizing: border-box;
+}
+
+.sidebar_item link{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    color: #828282;
+}
+
+.sidebar_item_fixed {
+    position: fixed;
+    left: 45px;
+    bottom: 35px;
+
+}
+
+.sidebar_item li {
+    line-height: 75px;
+    list-style: none;
+    }
+
+main {
+    display: block;
+    margin-top: 100px;
+    margin-left: 200px;
+  }
+ 

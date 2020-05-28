@@ -14,7 +14,7 @@
     <p>
         <?php
             $curl = curl_init( "http://localhost/api/admin/users/delete.php" );
-            //curl_setopt($curl, CURLOPT_POST, TRUE);
+            curl_setopt($curl, CURLOPT_POST, TRUE);
             $result = curl_exec($curl);
             print $result;
             curl_close($curl);

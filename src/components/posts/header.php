@@ -5,7 +5,7 @@
         </div>
         <div class="button">
             <div class="register_button">
-                <input type="button" onClick="location.href='http://localhost/pages/posts/new'" value="新規登録">
+                <a href='http://localhost/pages/posts/new'>新規登録</a>
             </div>
         </div>
     </div>

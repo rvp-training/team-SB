@@ -6,8 +6,8 @@
      
 </head>
 <body>
-    <?php include('../components/posts/header.php'); ?>
-    <?php include('../components/posts/sidebar.php'); ?>
+    <?php include('../../components/posts/header.php'); ?>
+    <?php include('../../components/posts/sidebar.php'); ?>
     <main>
         <!-- ここに内容を入れてください-->
     </main>

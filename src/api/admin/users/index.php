@@ -1,8 +1,27 @@
 <?php
-// 文字コード設定
+
+
 header('Content-Type: text/json; charset=UTF-8');
-$arr['name'] = 'sato';
-// 配列をjson形式にデコードして出力, 第二引数は、整形するための定数
-print json_encode($arr, JSON_PRETTY_PRINT);
+
+//DBと接続
+try{
+    $dbh = new PDO('pgsql:dbname=postgres;host=db','postgres','password');
+     
+} catch(PDOException $e){
+    echo 'DB接続エラー; ' . $e->getMessage();
+}
+//変数にDBからとってきたデータを配列として格納
+
+
+$prepare = $dbh->prepare('SELECT ＊ FROM users;');
+
+$prepare->execute();
+
+$result = $prepare ->fetchALL();
+
+$jsonstr =  json_encode($result);
+ 
+echo $jsonstr;
 
 ?>
+  

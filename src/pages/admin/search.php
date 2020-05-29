@@ -25,11 +25,11 @@
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                 $response = curl_exec($curl);
                 $result = json_decode($response, true);
-                
         ?>
         
         <a>検索結果は？？件です</a>
 
+       <!-- 検索結果出力テーブル　-->
         <table>
             <tr>
                 <th>氏名</th>
@@ -40,28 +40,32 @@
                 <th><transparent>&nbsp;</transparent></th>
             </tr>
             <tr>
-            <?php foreach ($result as $id) : ?>
-                <td>
-                    <content>
-                        <?php print $result[$id]["name"];?> 
-                    </content>
-                </td>
-                <td>
-                    <?php print $result[$id]["department"];?> 
-                </td>
-                <td>
-                    <?php print $result[$id]["position"];?> 
-                </td>
-                <td>
-                    <?php print $result[$id]["mail"];?> 
-                </td>
-                <td>
-                    <button onclick="location.href='http://localhost/pages/admin/edit?id=<?php $id ?>/'" class="edit_button"></button>
-                </td>
-                <td>
-                    <button onclick="location.href='http://localhost/pages/admin/delete?id=<?php $id ?>/confirm/'" class="delete_button"></button>
-                </td>
-            <?php endforeach; ?>
+                <?php foreach ($result as $key) : ?>
+                        <td>
+                            <content>
+                                <?php print $result[$key]["name"];?> 
+                            </content>
+                        </td>
+                        <td>
+                            <?php print $result[$key]["department"];?> 
+                        </td>
+                        <td>
+                            <?php print $result[$key]["position"];?> 
+                        </td>
+                        <td>
+                            <?php print $result[$key]["mail"];?> 
+                        </td>
+                        <td>
+                            <button onclick="location.href='http://localhost/pages/admin/edit?id=<?php $result[$key]["id"] ?>/'" class="edit_button"></button>
+                        </td>
+                        <td>
+                            <button onclick="location.href='http://localhost/pages/admin/delete?id=<?php $result[$key]["id"] ?>/confirm/'" class="delete_button"></button>
+                        </td>
+                <?php endforeach; ?>
+            </tr>
+        </table>
+
+        <?php curl_close($curl); ?>
 
     </main>
 </body>

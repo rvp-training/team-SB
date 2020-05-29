@@ -32,18 +32,19 @@
                 <th>メールアドレス</th>
             </tr>
             <tr>
-            <td>
-                <?php print $result["name"];?> 
-            </td>
-            <td>
-                <?php print $result["department"];?> 
-            </td>
-            <td>
-                <?php print $result["position"];?> 
-            </td>
-            <td>
-                <?php print $result["mail"];?> 
-            </td>
+                <td>
+                    <?php print $result["name"];?> 
+                </td>
+                <td>
+                    <?php print $result["department"];?> 
+                </td>
+                <td>
+                    <?php print $result["position"];?> 
+                </td>
+                <td>
+                    <?php print $result["mail"];?> 
+                </td>
+            </tr>
 
 
 

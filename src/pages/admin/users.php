@@ -42,26 +42,26 @@
             <tr>
             
             <!--
-            <?php foreach ($result as $id) : ?>
+            <?php foreach ($result as $key) : ?>
                 <td>
                     <content>
-                        <?php print $result[$id]["name"];?> 
+                        <?php print $result[$key]["name"];?> 
                     </content>
                 </td>
                 <td>
-                    <?php print $result[$id]["department"];?> 
+                    <?php print $result[$key]["department"];?> 
                 </td>
                 <td>
-                    <?php print $result[$id]["position"];?> 
+                    <?php print $result[$key]["position"];?> 
                 </td>
                 <td>
-                    <?php print $result[$id]["mail"];?> 
+                    <?php print $result[$key]["mail"];?> 
                 </td>
                 <td>
-                    <button onclick="location.href='http://localhost/pages/admin/edit?id=<?php $id ?>/'" class="edit_button"></button>
+                    <button onclick="location.href='http://localhost/pages/admin/edit?id=<?php $result[$key]["id"] ?>/'" class="edit_button"></button>
                 </td>
                 <td>
-                    <button onclick="location.href='http://localhost/pages/admin/delete?id=<?php $id ?>/confirm/'" class="delete_button"></button>
+                    <button onclick="location.href='http://localhost/pages/admin/delete?id=<?php $result[$key]["id"] ?>/confirm/'" class="delete_button"></button>
                 </td>
             <?php endforeach; ?>
             -->

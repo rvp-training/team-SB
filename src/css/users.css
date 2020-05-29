@@ -23,8 +23,6 @@ table th{
 table th transparent{
   text-align: center;
   padding: 7px 0;
-  border-right:solid 1px #ddd;
-  border-left:solid 1px #ddd;    
   background-color:transparent;
   width: 155px;
 }

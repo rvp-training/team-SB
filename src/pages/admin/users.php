@@ -58,10 +58,10 @@
                     <?php print $result[$id]["mail"];?> 
                 </td>
                 <td>
-                    <button onclick="location.href='http://localhost/pages/admin/edit?id=<?php $id ?>/'" ></button>
+                    <button onclick="location.href='http://localhost/pages/admin/edit?id=<?php $id ?>/'" class="edit_button"></button>
                 </td>
                 <td>
-                    <button onclick="location.href='http://localhost/pages/admin/delete?id=<?php $id ?>/confirm/'" ></button>
+                    <button onclick="location.href='http://localhost/pages/admin/delete?id=<?php $id ?>/confirm/'" class="delete_button"></button>
                 </td>
             <?php endforeach; ?>
             -->

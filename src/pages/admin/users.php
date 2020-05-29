@@ -21,7 +21,7 @@
         <?php
                 //GET /users API呼び出し
                 $curl = curl_init();
-                curl_setopt($curl, CURLOPT_URL, "http://web/api/test.php");
+                curl_setopt($curl, CURLOPT_URL, "http://web/api/admin/users/index.php");
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                 $response = curl_exec($curl);
                 $result = json_decode($response, true);
@@ -41,12 +41,9 @@
             </tr>
             <tr>
             
-            <!--
             <?php foreach ($result as $key) : ?>
                 <td>
-                    <content>
-                        <?php print $result[$key]["name"];?> 
-                    </content>
+                    <?php print $result[$key]["name"];?> 
                 </td>
                 <td>
                     <?php print $result[$key]["department"];?> 
@@ -64,14 +61,6 @@
                     <button onclick="location.href='http://localhost/pages/admin/delete?id=<?php $result[$key]["id"] ?>/confirm/'" class="delete_button"></button>
                 </td>
             <?php endforeach; ?>
-            -->
-
-            <td><content>山田太郎</content></td>
-            <td><content>人事部</content></td>
-            <td><content>部長</content></td>
-            <td><content>hogehoge.com</content></td>
-            <td><button onclick="location.href='http://localhost/pages/'" class="edit_button">編集</button></td>
-            <td><button class="delete_button">削除</button></td>
 
             </tr>
         </table>

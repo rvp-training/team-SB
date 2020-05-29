@@ -14,7 +14,7 @@
         
         <!--検索フォーム -->
         <form action="http:/localhost/pages/admin/search/" method="GET">
-        <input class="form-text" type="search" placeholder="氏名を入力">
+        <input class="form-text" type="search" name="name" id="name" maxlength="30" placeholder="氏名を入力" required>
         <input type="submit" value="検索">
         </form>
         

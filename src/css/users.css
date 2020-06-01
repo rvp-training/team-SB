@@ -1,0 +1,61 @@
+.form-text{
+  font-size: 16px;
+  padding: 10.130px;
+  width: 400px;
+}
+
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  width: 490px;
+}
+
+table th{
+  text-align: center;
+  padding: 7px 0;
+  border-right:solid 1px #ddd;
+  border-left:solid 1px #ddd;    
+  background-color:rgba(238, 59, 44, 0.4);
+  width: 155px;
+}
+
+table th transparent{
+  text-align: center;
+  padding: 7px 0;
+  background-color:transparent;
+  width: 155px;
+}
+
+
+table td {
+  text-align: center;
+  padding: 7px 0;
+  width: 155px;
+  border-right:solid 1px #ddd;
+  border-left:solid 1px #ddd;
+    
+}
+  
+.edit_button {
+  font-family: Noto Sans JP;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px 30px; 
+  background-color: rgba(238, 59, 44, 0.4);
+  border-radius: 6px;
+  color: #ffffff;
+}
+
+.delete_button {
+  font-family: Noto Sans JP;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px 30px; 
+  background-color:#CB0808;
+  border-radius: 6px;
+  color: #ffffff;
+
+}

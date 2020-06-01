@@ -1,5 +1,6 @@
 <?php
 
+// 文字コード設定
 header('Content-Type: text/json; charset=UTF-8');
 
 //DBと接続
@@ -10,15 +11,21 @@ try{
 }
 
 //DBからとってきたデータを配列として格納
-$prepare = $dbh->prepare('SELECT * FROM users WHERE delete_flag = 0;');
+
+$id = $_GET["id"] ;
+
+$prepare = $dbh->prepare('SELECT * FROM users WHERE id = :id;');
+
+$prepare->bindValue(':id',(int)$id,PDO::PARAM_INT);
 
 $prepare->execute();
 
-$result = $prepare ->fetchALL(PDO::FETCH_ASSOC);
+$result = $prepare->fetchALL(PDO::FETCH_ASSOC);
 
 $jsonstr =  json_encode($result, JSON_UNESCAPED_UNICODE);
 
 echo $jsonstr;
 
+
+
 ?>
-  

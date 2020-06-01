@@ -6,10 +6,24 @@
      
 </head>
 <body>
-    <?php include('../components/posts/header.php'); ?>
-    <?php include('../components/posts/sidebar.php'); ?>
+    <?php include('../../components/posts/header.php'); ?>
+    <?php include('../../components/posts/sidebar.php'); ?>
     <main>
-        <!-- ここに内容を入れてください-->
+    <?php
+        //GET /posts/detail API呼び出し
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, "http://web/api/admin/posts/detail?id=".$_GET['id']);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($curl);
+        $result = json_decode($response, true);
+        
+    ?>
+
+
+
+    <?php
+        curl_close($curl);
+    ?>
     </main>
 </body>
 </html>

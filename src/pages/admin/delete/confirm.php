@@ -26,27 +26,29 @@
             <H3>このユーザーを削除して本当によろしいですか</H3>
             
             <table>
-            <tr>
-                <th>氏名</th>
-                <th>部署</th>
-                <th>役職</th>
-                <th>メールアドレス</th>
-            </tr>
-            <tr>
-                <td>
-                    <?php print $result["name"];?> 
-                </td>
-                <td>
-                    <?php print $result["department"];?> 
-                </td>
-                <td>
-                    <?php print $result["position"];?> 
-                </td>
-                <td>
-                    <?php print $result["mail"];?> 
-                </td>
-            </tr>
+                <tr>
+                    <th>氏名</th>
+                    <th>部署</th>
+                    <th>役職</th>
+                    <th>メールアドレス</th>
+                </tr>
+                <tr>
+                    <td>
+                        <?php print $result["name"];?> 
+                    </td>
+                    <td>
+                        <?php print $result["department"];?> 
+                    </td>
+                    <td>
+                        <?php print $result["position"];?> 
+                    </td>
+                    <td>
+                        <?php print $result["mail"];?> 
+                    </td>
+                </tr>
+            </table>
 
+            <br>
             <div style="text-align:center;">
                 <button onclick=
                 "<?php

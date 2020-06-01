@@ -14,7 +14,7 @@ try{
 $name = $_GET["name"] ;
 $name = '%'.$name.'%';
 
-$prepare = $dbh->prepare('SELECT * FROM users WHERE name LIKE :name;');
+$prepare = $dbh->prepare('SELECT * FROM users WHERE name LIKE :name AND delete_flag = 0;');
 
 $prepare->bindValue(':name',$name,PDO::PARAM_STR);
 

@@ -3,6 +3,7 @@
 <head>
          <meta http-equiv="content-type" content="text/html; charset=utf-8" />
               <link href="http://localhost/css/system.css" rel="stylesheet" type="text/css" />
+              <link href="http://localhost/css/posts.css" rel="stylesheet" type="text/css" />
      
 </head>
 <body>
@@ -17,10 +18,12 @@
 
         <!--ページネーションを入れる -->
         <br>
-
-        <table>
-            <tr>
-
+        <div class=thumbnail>
+            <img src="" width="220" height="175" alt="image not found">
+            <h6>Title</h6>
+            <p>tag</p>
+            <p>投稿者名</p>
+        </div>
     </main>
 </body>
 </html>

@@ -48,11 +48,12 @@
         <?php include('../../../components/admin/sidebar.php'); ?>
         <main>
         <p>ユーザーの新規登録</p>
+        <!-- multipart: フォームにファイルを送信する機能がある場合に指定する -->
             <form action="" method="post" enctype="multipart/form-data">
                 <dl>
                     <dt>氏名</dt>
                     <dd>
-                        <input type="text" name="name" size="35" maxlength="30" value="<php? echo (htmlspecialchars($_POST['name'], ENT_QUOTES)); ?>" />
+                        <input type="text" name="name" size="35" maxlength="30" value="<?php echo (htmlspecialchars($_POST['name'], ENT_QUOTES)); ?>" />
                         <?php if ($error['name'] === 'blank'): ?>
                             <p class="register-error-message">* 必須項目です</p>
                         <?php endif; ?>
@@ -60,7 +61,7 @@
 
                     <dt>部署</dt>
                     <dd>
-                        <input type="text" name="department" size="35" maxlength="15" value="<php? echo (htmlspecialchars($_POST['department'], ENT_QUOTES)); ?>" />
+                        <input type="text" name="department" size="35" maxlength="15" value="<?php echo (htmlspecialchars($_POST['department'], ENT_QUOTES)); ?>" />
                         <?php if ($error['department'] === 'blank'): ?>
                             <p class="register-error-message">* 必須項目です</p>
                         <?php endif; ?>
@@ -68,7 +69,7 @@
 
                     <dt>役職</dt>
                     <dd>
-                        <input type="text" name="position" size="35" maxlength="15" value="<php? echo (htmlspecialchars($_POST['position'], ENT_QUOTES)); ?>" />
+                        <input type="text" name="position" size="35" maxlength="15" value="<?php echo (htmlspecialchars($_POST['position'], ENT_QUOTES)); ?>" />
                         <?php if ($error['position'] === 'blank'): ?>
                             <p class="register-error-message">* 必須項目です</p>
                         <?php endif; ?>
@@ -76,7 +77,7 @@
 
                     <dt>メールアドレス</dt>
                     <dd>
-                        <input type="text" name="mail" size="35" maxlength="45" value="<php? echo (htmlspecialchars($_POST['mail'], ENT_QUOTES)); ?>" />
+                        <input type="text" name="mail" size="35" maxlength="45" value="<?php echo (htmlspecialchars($_POST['mail'], ENT_QUOTES)); ?>" />
                         <?php if ($error['mail'] === 'blank'): ?>
                             <p class="register-error-message">* メールアドレスは英数字または記号で入力してください</p>
                         <?php endif; ?>
@@ -84,7 +85,7 @@
 
                     <dt>パスワード</dt>
                     <dd>
-                        <input type="text" name="pass" size="35" maxlength="45" value="<php? echo (htmlspecialchars($_POST['pass'], ENT_QUOTES)); ?>" />
+                        <input type="text" name="pass" size="35" maxlength="45" value="<?php echo (htmlspecialchars($_POST['pass'], ENT_QUOTES)); ?>" />
                         <?php if ($error['pass'] === 'blank'): ?>
                             <p class="register-error-message">* 必須項目です</p>
                         <?php endif; ?>

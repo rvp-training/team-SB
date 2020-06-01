@@ -6,10 +6,21 @@
      
 </head>
 <body>
-    <?php include('../components/posts/header.php'); ?>
-    <?php include('../components/posts/sidebar.php'); ?>
+    <?php include('../../components/posts/header.php'); ?>
+    <?php include('../../components/posts/sidebar.php'); ?>
     <main>
-        <!-- ここに内容を入れてください-->
+        <!--検索フォーム -->
+        <form action="http:/localhost/pages/posts/search/" method="GET">
+        <input class="form-text" type="search" id="tag" name="tag" placeholder="タグを入れて検索">
+        <input type="submit" value="検索">
+        </form>
+
+        <!--ページネーションを入れる -->
+        <br>
+
+        <table>
+            <tr>
+
     </main>
 </body>
 </html>

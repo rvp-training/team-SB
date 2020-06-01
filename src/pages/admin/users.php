@@ -39,30 +39,31 @@
                 <th><transparent>&nbsp;</transparent></th>
                 <th><transparent>&nbsp;</transparent></th>
             </tr>
-            <tr>
+           
             
-            <?php foreach ($result as $key) : ?>
-                <td>
-                    <?php print $result[$key]["name"];?> 
-                </td>
-                <td>
-                    <?php print $result[$key]["department"];?> 
-                </td>
-                <td>
-                    <?php print $result[$key]["position"];?> 
-                </td>
-                <td>
-                    <?php print $result[$key]["mail"];?> 
-                </td>
-                <td>
-                    <button onclick="location.href='http://localhost/pages/admin/edit?id=<?php $result[$key]["id"] ?>/'" class="edit_button"></button>
-                </td>
-                <td>
-                    <button onclick="location.href='http://localhost/pages/admin/delete?id=<?php $result[$key]["id"] ?>/confirm/'" class="delete_button"></button>
-                </td>
+            <?php foreach ($result as $key => $value) : ?>
+                <tr>
+                    <td>
+                        <?php print $result[$key]["name"];?> 
+                    </td>
+                    <td>
+                        <?php print $result[$key]["department"];?> 
+                    </td>
+                    <td>
+                        <?php print $result[$key]["position"];?> 
+                    </td>
+                    <td>
+                        <?php print $result[$key]["mail"];?> 
+                    </td>
+                    <td>
+                        <button onclick="location.href='http://localhost/pages/admin/edit?id=<?php print $result[$key]['id'] ?>/'" class="edit_button">編集</button>
+                    </td>
+                    <td>
+                        <button onclick="location.href='http://localhost/pages/admin/delete?id=<?php print $result[$key]['id'] ?>/confirm/'" class="delete_button">削除</button>
+                    </td>
+                </tr>
             <?php endforeach; ?>
 
-            </tr>
         </table>
 
         <?php

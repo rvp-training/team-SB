@@ -16,7 +16,7 @@
             <?php
                 //GET /admin/users/delete API呼び出し
                 $curl = curl_init();
-                curl_setopt($curl, CURLOPT_URL, "http://web/api/admin/users/delete?id=".$_GET);
+                curl_setopt($curl, CURLOPT_URL, "http://web/api/admin/users/delete_screen_test?id=".$_GET["id"]);
                 curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'GET');
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                 $response = curl_exec($curl);
@@ -24,7 +24,6 @@
             ?>
             
             <H3>このユーザーを削除して本当によろしいですか</H3>
-            
             <table>
                 <tr>
                     <th>氏名</th>
@@ -32,39 +31,43 @@
                     <th>役職</th>
                     <th>メールアドレス</th>
                 </tr>
+                <?php foreach ($result as $key => $value) : ?>
                 <tr>
                     <td>
-                        <?php print $result["name"];?> 
+                        <?php print $result[$key]["name"];?> 
                     </td>
                     <td>
-                        <?php print $result["department"];?> 
+                        <?php print $result[$key]["department"];?> 
                     </td>
                     <td>
-                        <?php print $result["position"];?> 
+                        <?php print $result[$key]["position"];?> 
                     </td>
                     <td>
-                        <?php print $result["mail"];?> 
+                        <?php print $result[$key]["mail"];?> 
                     </td>
                 </tr>
+            <?php endforeach; ?>
             </table>
 
             <br>
             <div style="text-align:center;">
                 <button onclick=
                 "<?php
+                echo"hoge";
                 //PUT /admin/users/delete API呼び出し
                 $curl = curl_init();
-                curl_setopt($curl, CURLOPT_URL,'http://web/api/admin/users/delete?id='.$_GET);
+                curl_setopt($curl, CURLOPT_URL,'http://web/api/admin/users/delete_test?id='.$_GET["id"]);
                 curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'PUT');
                 //curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($_GET));
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                 $response = curl_exec($curl);
+                var_dump($response);
                 if($response){
                     //削除処理に成功した場合
-                    "ページ遷移";
+                    print "削除に成功しました";
                 } else {
                     //失敗した場合にメッセージを出す
-                    "エラーメッセージをだす";
+                    print "削除に失敗しました";
                 }
                 curl_close($curl);
                 ?> " 

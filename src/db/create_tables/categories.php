@@ -3,14 +3,10 @@ try{
     $db = new PDO('pgsql:dbname=postgres;host=db','postgres','password');
 
     $sql = "CREATE TABLE categories (
-        id int UNIQUE PRIMARY KEY,
-        category_name varchar(255) DEFAULT NULL,
+        id serial PRIMARY KEY,
+        category_name varchar(255)
     )";
 
-    $sql2 = "INSERT INTO categories VALUES(
-        (1,'business')
-        (2,'private')
-    )";
 
     $res = $db->query($sql);
 

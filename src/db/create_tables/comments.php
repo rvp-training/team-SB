@@ -3,9 +3,9 @@ try{
     $db = new PDO('pgsql:dbname=postgres;host=db','postgres','password');
 
     $sql = "CREATE TABLE comments (
-        id serial UNIQUE PRIMARY KEY,
-        post_id int REFERENCES posts(id) NOT NULL,
-        user_id int REFERENCES users(id) NOT NULL,
+        id serial PRIMARY KEY NOT NULL,
+        post_id int REFERENCES posts(id),
+        user_id int REFERENCES users(id),
         content varchar(255) NOT NULL,
         time timestamp NOT NULL
     )";

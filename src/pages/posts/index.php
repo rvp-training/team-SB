@@ -16,13 +16,38 @@
         <input type="submit" value="検索">
         </form>
 
+        <?php
+                //GET /posts API呼び出し
+                $curl = curl_init();
+                curl_setopt($curl, CURLOPT_URL, "http://web/api/posts/users?category=".$_GET["category"]."&p=".$_GET["page"]);
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                $response = curl_exec($curl);
+                $result = json_decode($response, true);
+                
+        ?>
+
         <!--ページネーションを入れる -->
         <br>
-        <div class=thumbnail>
-            <img src="" width="220" height="175" alt="image not found">
-            <h6>Title</h6>
-            <p>tag</p>
-            <p>投稿者名</p>
+        <div id="thumbnail">
+            <div class="item">
+                <img src="../../laptop.jpg" alt="image not found">
+                <p class="title">title</p>
+                <p>tag</p>
+                <p>name</p>
+                <button onclick="location.href='http://localhost/pages/posts/detail?id=<?php $result[$key]['id']; ?>'" class="detail_button">detail</button>
+            </div>
+                 
+            <!--
+            <?php foreach ( $result as $key => $value ) : ?>
+            <div class="item">
+                <img src="<?php print $result[$key]['image']; ?>" width="220" height="175" alt="image not found">
+                <p><?php print $result[$key]['title']; ?></p>
+                <p><?php print $result[$key]['tag']; ?></p>
+                <p><?php print $result[$key]['name']; ?></p>
+                <button onclick="location.href='http://localhost/pages/posts/detail?id=<?php $result[$key]['id']; ?>'" class="detail_button">detail</button>
+            </div>
+            <?php endforeach; ?>
+            -->
         </div>
     </main>
 </body>

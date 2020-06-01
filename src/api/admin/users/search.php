@@ -14,18 +14,16 @@ try{
 $name = $_GET["name"] ;
 $name = '%'.$name.'%';
 
-$prepare = $dbh->prepare('SELECT ＊ FROM users name LIKE :name  ;');
+$prepare = $dbh->prepare('SELECT * FROM users WHERE name LIKE :name;');
 
-$prepare->bindValue(' :name',(string)$name,PDO::PARAM_STR);
+$prepare->bindValue(':name',$name,PDO::PARAM_STR);
 
 $prepare->execute();
 
-$result = $prepare ->fetchALL(PDO::FETCH_ASSOC);
+$result = $prepare->fetchALL(PDO::FETCH_ASSOC);
 
 $jsonstr =  json_encode($result, JSON_UNESCAPED_UNICODE);
 
 echo $jsonstr;
-
-
 
 ?>

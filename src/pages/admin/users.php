@@ -13,7 +13,7 @@
     <main>
         
         <!--検索フォーム -->
-        <form action="http:/localhost/pages/admin/search/" method="GET">
+        <form action="http://localhost/pages/admin/search" method="GET">
         <input class="form-text" type="search" name="name" id="name" maxlength="30" placeholder="氏名を入力" required>
         <input type="submit" value="検索">
         </form>
@@ -21,7 +21,7 @@
         <?php
                 //GET /users API呼び出し
                 $curl = curl_init();
-                curl_setopt($curl, CURLOPT_URL, "http://web/api/admin/users/index.php");
+                curl_setopt($curl, CURLOPT_URL, "http://web/api/admin/users/?name=".$_GET['name']);
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                 $response = curl_exec($curl);
                 $result = json_decode($response, true);
@@ -36,37 +36,37 @@
                 <th>部署</th>
                 <th>役職</th>
                 <th>メールアドレス</th>
-                <th><transparent>&nbsp;</transparent></th>
-                <th><transparent>&nbsp;</transparent></th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
             </tr>
-            <tr>
             
-            <?php foreach ($result as $key) : ?>
-                <td>
-                    <?php print $result[$key]["name"];?> 
-                </td>
-                <td>
-                    <?php print $result[$key]["department"];?> 
-                </td>
-                <td>
-                    <?php print $result[$key]["position"];?> 
-                </td>
-                <td>
-                    <?php print $result[$key]["mail"];?> 
-                </td>
-                <td>
-                    <button onclick="location.href='http://localhost/pages/admin/edit?id=<?php $result[$key]["id"] ?>/'" class="edit_button"></button>
-                </td>
-                <td>
-                    <button onclick="location.href='http://localhost/pages/admin/delete?id=<?php $result[$key]["id"] ?>/confirm/'" class="delete_button"></button>
-                </td>
+            <?php foreach ($result as $key => $value) : ?>
+                <tr>
+                    <td>
+                        <?php print $result[$key]["name"];?> 
+                    </td>
+                    <td>
+                        <?php print $result[$key]["department"];?> 
+                    </td>
+                    <td>
+                        <?php print $result[$key]["position"];?> 
+                    </td>
+                    <td>
+                        <?php print $result[$key]["mail"];?> 
+                    </td>
+                    <td>
+                        <button onclick="location.href='http://localhost/pages/admin/edit?id=<?php print $result[$key]['id'] ?>/'" class="edit_button">編集</button>
+                    </td>
+                    <td>
+                        <button onclick="location.href='http://localhost/pages/admin/delete?id=<?php print $result[$key]['id'] ?>/confirm/'" class="delete_button">削除</button>
+                    </td>
+                </tr>
             <?php endforeach; ?>
 
-            </tr>
         </table>
 
         <?php
-                curl_close($curl);
+            curl_close($curl);
         ?>
     </main>
 </body>

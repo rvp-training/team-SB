@@ -9,11 +9,11 @@ try{
 }
 
 //変数にDBからとってきたデータを配列として格納
-/*
-$id = $_GET["id"];*/
+
+$id = $_GET["id"];
 
 
-$id = 3;
+//$id = 3;
 
 $prepare = $dbh->prepare(
     'UPDATE users SET 

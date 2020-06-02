@@ -14,7 +14,14 @@
         
         <!--検索フォーム -->
         <form action="http://localhost/pages/admin/search" method="GET">
-        <input class="form-text" type="search" id="name" name="name" placeholder="氏名を入力">
+        <input class="form-text" type="search" id="name" name="name" placeholder=
+        <?php if (isset($_GET["name"])){
+            print $_GET["name"];
+        }else{
+            print "氏名を入力";
+        }?>
+        
+        >
         <input type="submit" value="検索">
         </form>
 
@@ -56,10 +63,10 @@
                         <?php print $result[$key]["mail"];?> 
                     </td>
                     <td>
-                        <button onclick="location.href='http://localhost/pages/admin/edit?id=<?php print $result[$key]['id'] ?>/'" class="edit_button">編集</button>
+                        <button onclick="location.href='http://localhost/pages/admin/edit?id=<?php print $result[$key]['id'] ?>'" class="edit_button">編集</button>
                     </td>
                     <td>
-                        <button onclick="location.href='http://localhost/pages/admin/delete?id=<?php print $result[$key]['id'] ?>/confirm/'" class="delete_button">削除</button>
+                        <button onclick="location.href='http://localhost/pages/admin/delete/confirm?id=<?php print $result[$key]['id'] ?>'" class="delete_button">削除</button>
                     </td>
                 </tr>
             <?php endforeach; ?>

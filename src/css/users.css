@@ -8,7 +8,7 @@ table{
   border-collapse: collapse;
   border-spacing: 0;
   table-layout: fixed;
-  width: 490px;
+  width: 600px;
 }
 
 table th{
@@ -17,21 +17,21 @@ table th{
   border-right:solid 1px #ddd;
   border-left:solid 1px #ddd;    
   background-color:rgba(238, 59, 44, 0.4);
-  width: 155px;
+  width: 200px;
 }
 
 table th transparent{
   text-align: center;
   padding: 7px 0;
   background-color:transparent;
-  width: 155px;
+  width: 200px;
 }
 
 
 table td {
   text-align: center;
   padding: 7px 0;
-  width: 155px;
+  width: 200px;
   border-right:solid 1px #ddd;
   border-left:solid 1px #ddd;
     

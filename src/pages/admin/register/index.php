@@ -44,51 +44,52 @@
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <link href="http://localhost/css/system.css" rel="stylesheet" type="text/css" />
+        <link href="http://localhost/css/register.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <?php include('../../../components/admin/header.php'); ?>
         <?php include('../../../components/admin/sidebar.php'); ?>
         <main>
-        <p>ユーザーの新規登録</p>
+        <p class="register-index-title">ユーザーの新規登録</p>
 
             <!-- multipart: フォームにファイルを送信する機能がある場合に指定する -->
-            <form action="http://localhost/api/admin/register2.php" method="post" enctype="multipart/form-data">
+            <form action="http://localhost/pages/admin/register/confirm.php" method="post" enctype="multipart/form-data">
                 <dl>
-                    <dt>氏名</dt>
+                    <dt class="register-index-content">氏名</dt>
                     <dd>
-                        <input type="text" name="name" size="35" maxlength="30" value="<?php echo (htmlspecialchars($_POST['name'], ENT_QUOTES)); ?>" />
+                        <input type="text" name="name" size="40" style="height:30px;" maxlength="30" placeholder="氏名を入力してください" value="<?php echo (htmlspecialchars($_POST['name'], ENT_QUOTES)); ?>" />
                         <?php if ($error['name'] === 'blank'): ?>
                             <p class="register-error-message">* 必須項目です</p>
                         <?php endif; ?>
                     </dd>
 
-                    <dt>部署</dt>
+                    <dt class="register-index-content">部署</dt>
                     <dd>
-                        <input type="text" name="department" size="35" maxlength="15" value="<?php echo (htmlspecialchars($_POST['department'], ENT_QUOTES)); ?>" />
+                        <input type="text" name="department" size="40" style="height:30px;" maxlength="15" placeholder="部署を入力してください" value="<?php echo (htmlspecialchars($_POST['department'], ENT_QUOTES)); ?>" />
                         <?php if ($error['department'] === 'blank'): ?>
                             <p class="register-error-message">* 必須項目です</p>
                         <?php endif; ?>
                     </dd>
 
-                    <dt>役職</dt>
+                    <dt class="register-index-content">役職</dt>
                     <dd>
-                        <input type="text" name="position" size="35" maxlength="15" value="<?php echo (htmlspecialchars($_POST['position'], ENT_QUOTES)); ?>" />
+                        <input type="text" name="position" size="40" style="height:30px;" maxlength="15" placeholder="役職を入力してください" value="<?php echo (htmlspecialchars($_POST['position'], ENT_QUOTES)); ?>" />
                         <?php if ($error['position'] === 'blank'): ?>
                             <p class="register-error-message">* 必須項目です</p>
                         <?php endif; ?>
                     </dd>
 
-                    <dt>メールアドレス</dt>
+                    <dt class="register-index-content">メールアドレス</dt>
                     <dd>
-                        <input type="text" name="mail" size="35" maxlength="45" value="<?php echo (htmlspecialchars($_POST['mail'], ENT_QUOTES)); ?>" />
+                        <input type="text" name="mail" size="40" style="height:30px;" maxlength="45" placeholder="メールアドレスを入力してください" value="<?php echo (htmlspecialchars($_POST['mail'], ENT_QUOTES)); ?>" />
                         <?php if ($error['mail'] === 'blank'): ?>
                             <p class="register-error-message">* メールアドレスは英数字または記号で入力してください</p>
                         <?php endif; ?>
                     </dd>
 
-                    <dt>パスワード</dt>
+                    <dt class="register-index-content">パスワード</dt>
                     <dd>
-                        <input type="text" name="pass" size="35" maxlength="45" value="<?php echo (htmlspecialchars($_POST['pass'], ENT_QUOTES)); ?>" />
+                        <input type="text" name="pass" size="40" style="height:30px;" maxlength="45" placeholder="パスワードを入力してください" value="<?php echo (htmlspecialchars($_POST['pass'], ENT_QUOTES)); ?>" />
                         <?php if ($error['pass'] === 'blank'): ?>
                             <p class="register-error-message">* 必須項目です</p>
                         <?php endif; ?>
@@ -98,7 +99,8 @@
                     </dd>
                 </dl>
                 <div>
-                    <input type="submit" value="登録" />
+                    <input type="submit" value="登録" style="border:2px solid #EE3B2C;color:#FFF;background-color:#EE3B2C;border-radius:7px;width:100px;height:30px;margin-top:25px;margin-left:21%;" />
+                    <input type="hidden" name="redirect" value="admin/register/confirm.php"/>
                 </div>
             </form>  
         </main>

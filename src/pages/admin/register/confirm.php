@@ -18,6 +18,29 @@
         <?php include('../../../components/admin/sidebar.php'); ?>
         <main>
             <title>この内容で登録してよろしいですか</title>
+            <p>
+                <?php
+                    //  渡したいパラメータ
+                    $params = [
+                        'name' => $_session['register']['name'],
+                        'department' => $_session['register']['department'],
+                        'position' => $_session['register']['position'],
+                        'mail' => $_session['register']['mail'],
+                        'pass' => $_session['register']['pass']
+                    ];
+                    // 初期化
+                    $curl = curl_init();
+                    // リンクを貼る
+                    curl_setopt($curl, CURLOPT_URL, "http://web/api/admin/users/register2.php");
+                    // HTTPメソッドの選択
+                    curl_setopt($curl, CURLOPT_POST, TRUE);
+                    // パラメータをセット
+                    curl_setopt($curl, CURLOPT_POSTFIELDS, $params); 
+                    // HTTPメソッドの選択
+                    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                    $response = curl_exec($curl); 
+                ?>
+            </p>
             
             <form action="" method="post">
                 <table class="table">
@@ -53,7 +76,9 @@
                 <div>
                     <a href="index.php?action=rewrite">&laquo;&nbsp;戻る</a> | <input type="submit" value="登録" />
                 </div>
-            </form>               
+            </form>    
+            <!-- curl閉じる -->
+           <?php curl_close($curl); ?> 
         </main>
     </body>
 </html>

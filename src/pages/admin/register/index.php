@@ -1,5 +1,5 @@
 <?php
-    // セッションを作成。 もしくは、リクエスト上で GET, POST またはクッキーにより渡されたセッション ID に基づき現在のセッションを復帰。
+    // セッションを作成。 もしくは、リクエスト上で GET, POST またはクッキーにより渡されたセッション ID に基づき現在のセッションを復帰
     session_start();
 
     if (!empty($_POST)){
@@ -16,6 +16,9 @@
     if ($_POST['mail'] === ''){
         $error['mail'] = 'blank';
     }
+    // if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\?\*\[|\]%'=~^\{\}\/\+!#&\$\._-])*@([a-zA-Z0-9_-])+\.([a-zA-Z0-9\._-]+)+$/", $_POST["mail"])) {
+    //     echo "メールアドレスの形式で入力してください";
+    // }
     if (strlen($_POST['pass']) < 8){
         $error['pass'] = 'length';
     }
@@ -29,7 +32,6 @@
         exit();
     }
 }
-
     // 書き直し
     if ($_REQUEST['action'] == 'rewrite'){
         $_POST = $_SESSION['register'];
@@ -48,8 +50,9 @@
         <?php include('../../../components/admin/sidebar.php'); ?>
         <main>
         <p>ユーザーの新規登録</p>
-        <!-- multipart: フォームにファイルを送信する機能がある場合に指定する -->
-            <form action="" method="post" enctype="multipart/form-data">
+
+            <!-- multipart: フォームにファイルを送信する機能がある場合に指定する -->
+            <form action="http://localhost/api/admin/register2.php" method="post" enctype="multipart/form-data">
                 <dl>
                     <dt>氏名</dt>
                     <dd>
@@ -97,7 +100,7 @@
                 <div>
                     <input type="submit" value="登録" />
                 </div>
-            </form>
+            </form>  
         </main>
     </body>
 </html>

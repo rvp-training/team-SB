@@ -9,11 +9,11 @@ try{
 }
 
 //変数にDBからとってきたデータを配列として格納
-$name = $_POST["htmlのとこ参照するよ"];
-$department = $_POST["htmlのとこ参照するよ"];
-$position = $_POST["htmlのとこ参照するよ"];
-$mail = $_POST["htmlのとこ参照するよ"];
-$pass = $_POST["htmlのとこ参照するよ"];
+$name = $_POST["name"];
+$department = $_POST["department"];
+$position = $_POST["position"];
+$mail = $_POST["mail"];
+$pass = $_POST["pass"];
 
 /*$name = 'テスト';
 $department = 'テスト部';

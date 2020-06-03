@@ -7,7 +7,7 @@
 <body>
     <div id="login_bg">
         <div id="login_box">
-            <form action="http://localhost/login" method="POST">
+            <form action="http://localhost/pages/check" method="POST">
                 <label for="mail" class="login_text">メールアドレス</label>
                 <p><input class="form-text" type="text" name="mail" maxlength="45" placeholder=
                 "<?php if (isset($_POST["mail"])){

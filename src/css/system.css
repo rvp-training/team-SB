@@ -1,11 +1,12 @@
 #login_bg {
     height: 100vh;
-    width: 100vh;
+    width: 100vw;
     background-color: rgba(31, 15, 131, 0.49);
 }
 
 #login_box {
-
+    height: 100vh;
+    text-align: center;
 }
 
 .login_text {

@@ -6,7 +6,7 @@
          <li class="sidebar_item"><a href="http://localhost/pages/posts?category=private">プライベート</a></li>
         </ul>   
         <div class="sidebar_item_fixed">
-            <a href="/logout APIを呼び出す処理">ログアウト</a>
+            <a href="http://localhost/pages/logout">ログアウト</a>
         </div>
     </div>
 </div>

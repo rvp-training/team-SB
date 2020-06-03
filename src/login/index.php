@@ -12,8 +12,8 @@ try{
 }
 
 
-$_POST['mail'] = "test@co.jp";
-$_POST['pass'] = "test";
+//$_POST['mail'] = "test@co.jp";
+//$_POST['pass'] = "test";
 
 session_start();
 

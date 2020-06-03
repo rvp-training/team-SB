@@ -9,17 +9,17 @@ try{
 }
 
 //変数にDBからとってきたデータを配列として格納
-$name = $_POST["htmlのとこ参照するよ"];
+/*$name = $_POST["htmlのとこ参照するよ"];
 $department = $_POST["htmlのとこ参照するよ"];
 $position = $_POST["htmlのとこ参照するよ"];
 $mail = $_POST["htmlのとこ参照するよ"];
 $pass = $_POST["htmlのとこ参照するよ"];
-
-/*$name = 'テスト';
+*/
+$name = 'テスト';
 $department = 'テスト部';
 $position = 'テスト部長';
-$mail = 'test.co.jp';
-$pass = 'test';*/
+$mail = 'test@co.jp';
+$pass = 'test';
 
 $prepare = $dbh->prepare('INSERT INTO users ( 
     name, department, position, mail, pass ) 

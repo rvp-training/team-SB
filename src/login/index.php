@@ -9,11 +9,12 @@ try{
     echo 'DB接続エラー; ' . $e->getMessage();
 }
 
-
-//$_POST['mail'] = "test@co.jp";
-//$_POST['pass'] = "test";
-
 session_start();
+
+$_POST['mail'] = "test@co.jp";
+$_POST['pass'] = "test";
+
+
 
 //メールアドレスの方が適正かどうか確認
 if (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
@@ -35,13 +36,20 @@ if (!isset($row['mail'])) {
 
 }
 
-//var_dump($_POST['pass'], $row['pass'],$row['admin_flag']);
 
 //パスワード確認後sessionにメールアドレスを渡す
 if ($_POST['pass'] = $row['pass']) {
   session_regenerate_id(true); //session_idを新しく生成し、置き換える
+<<<<<<< HEAD
   $_POST['mail'] = $row['mail'];
+=======
+  $_SESSION['user_id'] = $row['id'];
+  $_SESSION['admin_flag'] = $row['admin_flag'];
+  $_SESSION['mail'] = $row['mail'];
+  var_dump($_SESSION);
+>>>>>>> master
   echo 'ログインしました';
+  
 } else {
   echo 'メールアドレス又はパスワードが間違っています。';
   //return false;

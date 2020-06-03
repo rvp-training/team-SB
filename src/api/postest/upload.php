@@ -28,31 +28,6 @@ if (isset($_POST['upload'])) {
     $stmt->execute();
 }
 
-// if (isset($_POST['upload'])) {
-//     $sql = "INSERT INTO testimaes(image_1, image_2, image_3, image_4, image_5) VALUES (:name1, :name2, :name3, :name4, :name5)";
-//     $stmt = $db->prepare($sql);
-//     $stmt->bindValue(':name', $image, PDO::PARAM_STR);
-//     $stmt->execute();
-// 	foreach ($_FILES['image']['tmp_name'] as $i => $tmp_name){
-//         if($tmp_name === "" ){
-//             continue;
-//         }
-//         $image = uniqid(mt_rand(), true);//ファイル名をユニーク化
-//         $image .= '.' . substr(strrchr($_FILES['image']['name'][$i], '.'), 1);
-//         $file = "/images/$image";
-//         $no = $i + 1;
-// 		if (move_uploaded_file($_FILES['image']['tmp_name'][$i], $file)){
-//             $sql = "INSERT INTO testimages(image_".$no.") VALUES (:name)";
-//             $stmt = $db->prepare($sql);
-//             $stmt->bindValue(':name', $image, PDO::PARAM_STR);
-//             $stmt->execute();
-//             echo $_FILES['image']['name'].'をアップロードしました<br>';
-//             var_dump($sql);
-// 		} else {
-// 			print("アップロードに失敗しました");
-//         }
-//     }
-// }
 ?>    
 
 

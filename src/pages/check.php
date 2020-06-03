@@ -5,46 +5,26 @@
              
 </head>
 <body>
-    <?php
-        $params = [ "mail" => $_POST["mail"],
-                    "pass" => $_POST["pass"]];
-        //初期化
-        $curl = curl_init();
-        //リンクを貼る
-        curl_setopt($curl, CURLOPT_URL, "http://web/login/index.php");
-        //HTTPメソッドの選択
-        curl_setopt($curl, CURLOPT_POST, TRUE);
-        curl_setopt($curl, CURLOPT_POSTFIELDS, $params);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        $response = curl_exec($curl);
-        //JSONデコード
-        $result = json_decode($response, true);
-        var_dump($result);
-        //curl閉じる
-        curl_close($curl);
-        /*$params = [
-            "mail" => $_POST["mail"],
-            "pass" => $_POST["pass"]
-        ];
-        //初期化
-        $curl = curl_init();
-        //リンクを貼る
-        curl_setopt($curl, CURLOPT_URL, "http://web/api/login.php");
-        //HTTPメソッドの選択
-        curl_setopt($curl, CURLOPT_POST, TRUE);
-        curl_setopt($curl, CURLOPT_POSTFIELDS, $params);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        $response = curl_exec($curl);
-        //JSONデコード
-        $result = json_decode($response, true);
-        if ($result == "一般ユーザー"){
+<?php
+    session_start();
+    $params = [ "mail" => $_POST["mail"],
+                "pass" => $_POST["pass"]];
 
-        } elseif () {
-
-        }
-        //curl閉じる
-        curl_close($curl);*/
-        ?>
-
+    //POST /login API呼び出し
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_URL, "http://web/login/index.php");
+    curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'POST');
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $params); 
+    $response = curl_exec($curl);
+    $result = json_decode($response, true);
+    if ($response === "0"){
+        header('Location: http://localhost/pages/posts.php');
+    } elseif ($response === "1") {
+        header('Location: http://localhost/admin.php');
+    } else {
+        header('Location: http://localhost/pages/login.php');
+    }
+?>
 </body>
 </html>

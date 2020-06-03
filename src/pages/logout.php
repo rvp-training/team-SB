@@ -1,5 +1,4 @@
 <?php
-  header("Content-type: text/html; charset=utf-8");
  session_start();
 ///logout APIを呼び出す
     $curl = curl_init();
@@ -23,5 +22,6 @@
     // header("HTTP/1.1 301 Moved Permanently");
     // header("Location: login.php"); 
    }
+   
  
 ?>

@@ -11,7 +11,7 @@
     <?php include('../../components/posts/sidebar.php'); ?>
     <main>
         <!--検索フォーム -->
-        <form action="http:/localhost/pages/posts/search/" method="GET">
+        <form action="http://localhost/pages/posts/search" method="GET">
         <input class="form-text" type="search" id="tag" name="tag" placeholder="タグを入れて検索">
         <input type="submit" value="検索">
         </form>
@@ -30,10 +30,46 @@
         <br>
         <div id="thumbnail">
             <div class="item">
-                <img src="../../laptop.jpg" alt="image not found">
+                <img src="../../images/laptop.jpg" alt="image not found">
                 <p class="title">title</p>
                 <p>tag</p>
                 <p>name</p>
+                <button onclick="location.href='http://localhost/pages/posts/detail?id=<?php $result[$key]['id']; ?>'" class="detail_button">detail</button>
+            </div>
+            <div class="item">
+                <img src="../../images/laptop.jpg" alt="image not found">
+                <p class="title">title</p>
+                <p>tag</p>
+                <p>name</p>
+                <button onclick="location.href='http://localhost/pages/posts/detail?id=<?php $result[$key]['id']; ?>'" class="detail_button">detail</button>
+            </div>
+            <div class="item">
+                <img src="../../images/laptop.jpg" alt="image not found">
+                <p class="title">title</p>
+                <p>tag</p>
+                <p>name</p>
+                <button onclick="location.href='http://localhost/pages/posts/detail?id=<?php $result[$key]['id']; ?>'" class="detail_button">detail</button>
+            </div>
+            <div class="item">
+                <img src="../../images/laptop.jpg" alt="image not found">
+                <p class="title">title</p>
+                <p>tag</p>
+                <p>name</p>
+                <button onclick="location.href='http://localhost/pages/posts/detail?id=<?php $result[$key]['id']; ?>'" class="detail_button">detail</button>
+            </div>
+            <div class="item">
+                <img src="../../images/laptop.jpg" alt="image not found">
+                <p class="title">title</p>
+                <p>tag</p>
+                <p>name</p>
+                <button onclick="location.href='http://localhost/pages/posts/detail?id=<?php $result[$key]['id']; ?>'" class="detail_button">detail</button>
+            </div>
+            
+            <div class="item">
+                <img src="../../images/brussels-griffon-dog-poses-for-the-camera.jpg" alt="image not found">
+                <p class="title">犬派と猫派あなたはどっち？</p>
+                <p>#dog #cat</p>
+                <p>山田太郎</p>
                 <button onclick="location.href='http://localhost/pages/posts/detail?id=<?php $result[$key]['id']; ?>'" class="detail_button">detail</button>
             </div>
                  

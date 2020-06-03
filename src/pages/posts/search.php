@@ -11,7 +11,7 @@
     <?php include('../../components/posts/sidebar.php'); ?>
     <main>
         <!--検索フォーム -->
-        <form action="http:/localhost/pages/posts/search" method="GET">
+        <form action="http://localhost/pages/posts/search" method="GET">
         <input class="form-text" type="search" id="tag" name="tag" placeholder="タグを入れて検索">
         <input type="submit" value="検索">
         </form>
@@ -30,7 +30,7 @@
         <br>
         <div id="thumbnail">
             <div class="item">
-                <img src="" alt="image not found">
+                <img src="../../images/laptop.jpg" alt="image not found">
                 <p class="title">title</p>
                 <p>tag</p>
                 <p>name</p>

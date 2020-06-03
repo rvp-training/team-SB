@@ -1,10 +1,10 @@
 <?php
     session_start();
 
-    if (!isset($_SESSION['edit'])){
-        header('Location: index.php');
-        exit();
-    }       
+    // if (!isset($_SESSION['edit'])){
+    //     header('Location: index.php');
+    //     exit();
+    // }       
 ?>
 
 <!DOCTYPE html>
@@ -18,16 +18,7 @@
         <?php include('../../../components/admin/header.php'); ?>
         <?php include('../../../components/admin/sidebar.php'); ?>
         <main>
-            <!-- <#?php
-                //GET /admin/users/delete API呼び出し
-                $curl = curl_init();
-                curl_setopt($curl, CURLOPT_URL, "http://web/api/admin/users/edit?id=".$_GET["id"]);
-                curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'GET');
-                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-                $response = curl_exec($curl);
-                $result = json_decode($response, true);
-            ?> -->
-            <div class="register-confirm-title">この内容で登録してよろしいですか</div>
+            <div class="edit-confirm-title">この内容で登録してよろしいですか</div>
             <form action="http://localhost/pages/admin/edit/complete.php" method="post" enctype="multipart/form-data">
                 <table>
                     <tr>
@@ -56,7 +47,7 @@
                     </tr>
                 </table>
             <a href="index.php?action=rewrite"><button type="button" style="border:2px solid #EE3B2C;color:#FFF;background-color:#EE3B2C;border-radius:7px;width:100px;height:30px;margin-top:40px;margin-left:25px;">戻る</button></a>
-                    <input type="submit" style="border:2px solid #EE3B2C;color:#FFF;background-color:#EE3B2C;border-radius:7px;width:100px;height:30px;margin-top:40px;margin-left:60px;" value="登録" />
+                    <input type="submit" style="border:2px solid #EE3B2C;color:#FFF;background-color:#EE3B2C;border-radius:7px;width:100px;height:30px;margin-top:40px;margin-left:60px;" value="更新" />
                     <input type="hidden" name="name" value="<?php echo $_POST['name'] ?>">
                     <input type="hidden" name="department" value="<?php echo $_POST['department'] ?>">
                     <input type="hidden" name="position" value="<?php echo $_POST['position'] ?>">

@@ -1,0 +1,46 @@
+#thumbnail p{
+    font-family: Noto Sans JP;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+#thumbnail {
+    display: grid;
+    grid-template-rows: 350px 350px 350px 350px 350px;
+    grid-template-columns: 250px 250px 250px 250px;
+    grid-row-gap: 10px;
+    grid-column-gap: 15px;
+}
+
+.item {
+    width: 250px; height: 350px;
+    background-color:#f0f8ff;
+    border: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.item img {
+    max-width:220px;
+    max-height:175px;
+    width:auto;
+    height:auto;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.detail_button {
+    font-family: Noto Sans JP;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 2px 5px; 
+    background-color:#1F0F83;
+    border-radius: 3px;
+    color: #ffffff;
+    text-align: center;
+}   

@@ -21,7 +21,7 @@
         <?php
                 //GET /users API呼び出し
                 $curl = curl_init();
-                curl_setopt($curl, CURLOPT_URL, "http://web/api/admin/users/?name=".$_GET['name']);
+                curl_setopt($curl, CURLOPT_URL, "http://web/api/admin/users?name=".$_GET['name']);
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                 $response = curl_exec($curl);
                 $result = json_decode($response, true);
@@ -30,6 +30,7 @@
 
     
         <!--一覧表 -->
+        <br>
         <table>
             <tr>
                 <th>氏名</th>
@@ -55,10 +56,10 @@
                         <?php print $result[$key]["mail"];?> 
                     </td>
                     <td>
-                        <button onclick="location.href='http://localhost/pages/admin/edit?id=<?php print $result[$key]['id'] ?>/'" class="edit_button">編集</button>
+                        <button onclick="location.href='http://localhost/pages/admin/edit?id=<?php print $result[$key]['id'] ?>'" class="edit_button">編集</button>
                     </td>
                     <td>
-                        <button onclick="location.href='http://localhost/pages/admin/delete?id=<?php print $result[$key]['id'] ?>/confirm/'" class="delete_button">削除</button>
+                        <button onclick="location.href='http://localhost/pages/admin/delete/confirm?id=<?php print $result[$key]['id'] ?>'" class="delete_button">削除</button>
                     </td>
                 </tr>
             <?php endforeach; ?>

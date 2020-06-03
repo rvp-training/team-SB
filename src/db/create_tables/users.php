@@ -8,7 +8,9 @@ try{
         department varchar(255) NOT NULL,
         position varchar(255) NOT NULL,
         mail varchar(255) UNIQUE NOT NULL,
-        pass varchar(255) NOT NULL
+        pass varchar(255) NOT NULL,
+        delete_flag integer NOT NULL default 0,
+        admin_flag integer NOT NULL default 0
     )";
 
     $res = $db->query($sql);

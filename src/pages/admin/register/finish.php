@@ -10,7 +10,7 @@
     //POST /admin/register API呼び出し
     // echo $params;
     $curl = curl_init();
-    curl_setopt($curl, CURLOPT_URL, "http://web/api/admin/register2.php");
+    curl_setopt($curl, CURLOPT_URL, "http://web/api/admin/register.php");
     curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'POST');
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($curl, CURLOPT_POSTFIELDS, $params); 

@@ -99,7 +99,7 @@
                     </dd>
                 </dl>
                 <div>
-                    <input type="submit" value="登録" style="border:2px solid #EE3B2C;color:#FFF;background-color:#EE3B2C;border-radius:7px;width:100px;height:30px;margin-top:25px;margin-left:21%;" />
+                    <input type="submit" value="登録" style="border:2px solid #EE3B2C;color:#FFF;background-color:#EE3B2C;border-radius:7px;width:100px;height:30px;margin-top:25px;margin-left:130px;" />
                     <input type="hidden" name="redirect" value="admin/register/confirm.php"/>
                 </div>
             </form>  

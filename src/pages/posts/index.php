@@ -7,6 +7,7 @@
      
 </head>
 <body>
+    <?php session_start(); ?>
     <?php include('../../components/posts/header.php'); ?>
     <?php include('../../components/posts/sidebar.php'); ?>
     <main>

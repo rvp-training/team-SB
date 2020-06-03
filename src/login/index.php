@@ -2,8 +2,6 @@
 header('Content-Type: text/json; charset=UTF-8');
 
 
-
-
 //DBと接続
 try{
     $dbh = new PDO('pgsql:dbname=postgres;host=db','postgres','password');
@@ -42,10 +40,10 @@ if (!isset($row['mail'])) {
 //パスワード確認後sessionにメールアドレスを渡す
 if ($_POST['pass'] = $row['pass']) {
   session_regenerate_id(true); //session_idを新しく生成し、置き換える
-  $_SESSION['mail'] = $row['mail'];
+  $_POST['mail'] = $row['mail'];
   echo 'ログインしました';
 } else {
   echo 'メールアドレス又はパスワードが間違っています。';
-  return false;
+  //return false;
 }
 ?>

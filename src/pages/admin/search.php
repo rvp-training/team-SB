@@ -19,9 +19,7 @@
             print $_GET["name"];
         }else{
             print "氏名を入力";
-        }?>
-        
-        >
+        }?>>
         <input type="submit" value="検索">
         </form>
 

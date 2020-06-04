@@ -11,14 +11,6 @@ try{
 
 session_start();
 
-// $_POST['mail'] = "q@q.q";
-// $_POST['pass'] = "qqqqqqqq";
-
-// $_POST['mail'] = "senba@hoge.hoge";
-// $_POST['pass'] = "aaaaaaaa";
-
-
-
 //メールアドレスの方が適正かどうか確認
 if (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
   echo '入力された値が不正です。';
@@ -41,7 +33,7 @@ if (!isset($row['mail'])) {
 
 
 //パスワード確認後sessionにメールアドレスを渡す
-if ($_POST['pass'] = $row['pass']) {
+if ($_POST['pass'] == $row['pass']) {
   session_regenerate_id(true); //session_idを新しく生成し、置き換える
 
   $_SESSION['user_id'] = $row['id'];

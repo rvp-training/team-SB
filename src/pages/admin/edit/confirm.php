@@ -48,6 +48,7 @@
                 </table>
             <a href="index.php?action=rewrite"><button type="button" style="border:2px solid #EE3B2C;color:#FFF;background-color:#EE3B2C;border-radius:7px;width:100px;height:30px;margin-top:40px;margin-left:25px;">戻る</button></a>
                     <input type="submit" style="border:2px solid #EE3B2C;color:#FFF;background-color:#EE3B2C;border-radius:7px;width:100px;height:30px;margin-top:40px;margin-left:60px;" value="更新" />
+                    <input type="hidden" name="id" value="<?php echo $_POST['id'] ?>">
                     <input type="hidden" name="name" value="<?php echo $_POST['name'] ?>">
                     <input type="hidden" name="department" value="<?php echo $_POST['department'] ?>">
                     <input type="hidden" name="position" value="<?php echo $_POST['position'] ?>">

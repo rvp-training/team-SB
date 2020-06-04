@@ -8,19 +8,22 @@ try{
      } catch(PDOException $e){
     echo 'DB接続エラー; ' . $e->getMessage();
 }
-
 //DBからとってきたデータを配列として格納
 
 $category = $_GET["category"];
+$tag = $_GET["tag"];
 
 $prepare = $dbh->prepare('SELECT posts.id, image_1, title, name, tag
 FROM posts JOIN users
 ON users.id = posts.user_id
 JOIN images 
 ON posts.image_id = images.id
-WHERE category_id = :category;');
+WHERE category_id = :category
+AND tag = :tag
+;');
 
 $prepare->bindValue(':category',(int)$category,PDO::PARAM_INT);
+$prepare->bindValue(':tag',$tag,PDO::PARAM_STR);
 
 $prepare->execute();
 

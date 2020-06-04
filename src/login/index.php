@@ -2,8 +2,6 @@
 header('Content-Type: text/json; charset=UTF-8');
 
 
-
-
 //DBと接続
 try{
     $dbh = new PDO('pgsql:dbname=postgres;host=db','postgres','password');
@@ -13,10 +11,13 @@ try{
 
 session_start();
 
-$_POST['mail'] = "test@co.jp";
-$_POST['pass'] = "test";
+// $_POST['mail'] = "q@q.q";
+// $_POST['pass'] = "qqqqqqqq";
 
+// $_POST['mail'] = "senba@hoge.hoge";
+// $_POST['pass'] = "aaaaaaaa";
 
+// var_dump($_POST['mail']);
 
 //メールアドレスの方が適正かどうか確認
 if (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
@@ -26,7 +27,7 @@ if (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
 
 //DB内でPOSTされたメールアドレスを検索
 
-  $stmt = $dbh->prepare('SELECT * from users WHERE mail = ?');
+  $stmt = $dbh->prepare('SELECT * from users WHERE delete_flag = 0 AND mail = ?');
   $stmt->execute([$_POST['mail']]);
   $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -42,14 +43,16 @@ if (!isset($row['mail'])) {
 //パスワード確認後sessionにメールアドレスを渡す
 if ($_POST['pass'] = $row['pass']) {
   session_regenerate_id(true); //session_idを新しく生成し、置き換える
+
   $_SESSION['user_id'] = $row['id'];
   $_SESSION['admin_flag'] = $row['admin_flag'];
   $_SESSION['mail'] = $row['mail'];
   var_dump($_SESSION);
+
   echo 'ログインしました';
   
 } else {
   echo 'メールアドレス又はパスワードが間違っています。';
-  return false;
+  //return false;
 }
 ?>

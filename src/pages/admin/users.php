@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,11 +20,10 @@
         <?php
                 //GET /users API呼び出し
                 $curl = curl_init();
-                curl_setopt($curl, CURLOPT_URL, "http://web/api/admin/users?name=".$_GET['name']);
+                curl_setopt($curl, CURLOPT_URL, "http://web/api/admin/users/");
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                 $response = curl_exec($curl);
                 $result = json_decode($response, true);
-                
         ?>
 
     

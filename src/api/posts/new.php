@@ -45,7 +45,7 @@ $text = $_POST["text"];
 $tag = $_POST["tag"];
 $category_id = $_POST["category_id"];
 
-$preparecontent = prepare('INSERT INTO posts ( 
+$preparecontent = $db->prepare('INSERT INTO posts ( 
     title, text, tag, image_id, user_id) 
     VALUES ( :title, :text, :tag, :image_id, :user_id, :category_id);');
 
@@ -57,7 +57,7 @@ $preparecontent->bindValue(':user_id',(string)$user_id,PDO::PARAM_STR);
 $preparecontent->bindValue(':category_id',(string)$category_id,PDO::PARAM_STR);
 
 
-$pre->execute();
+$preparecontent->execute();
 // タイトル、テキスト、タグの投稿
 
 echo "登録完了しました";

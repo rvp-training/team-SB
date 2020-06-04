@@ -11,14 +11,6 @@ try{
 
 session_start();
 
-// $_POST['mail'] = "q@q.q";
-// $_POST['pass'] = "qqqqqqqq";
-
-// $_POST['mail'] = "senba@hoge.hoge";
-// $_POST['pass'] = "aaaaaaaa";
-
-
-
 //メールアドレスの方が適正かどうか確認
 if (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
   echo '入力された値が不正です。';
@@ -27,7 +19,7 @@ if (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
 
 //DB内でPOSTされたメールアドレスを検索
 
-  $stmt = $dbh->prepare('SELECT * from users WHERE delete_flag = 0 AND admin_flag = 0 AND mail = ?');
+  $stmt = $dbh->prepare('SELECT * from users WHERE delete_flag = 0 AND admin_flag = 1 AND mail = ?');
   $stmt->execute([$_POST['mail']]);
   $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -50,6 +42,6 @@ if ($_POST['pass'] = $row['pass']) {
   echo 'ログインしました';
 } else {
   echo 'メールアドレス又はパスワードが間違っています。';
-  //return false;
+  return false;
 }
 ?>

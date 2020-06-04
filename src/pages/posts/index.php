@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +8,6 @@
      
 </head>
 <body>
-    <?php session_start(); ?>
     <?php include('../../components/posts/header.php'); ?>
     <?php include('../../components/posts/sidebar.php'); ?>
     <main>
@@ -20,14 +20,14 @@
         <?php
                 //GET /posts API呼び出し
                 $curl = curl_init();
-                curl_setopt($curl, CURLOPT_URL, "http://web/api/posts/users?category=".$_GET["category"]."&p=".$_GET["page"]);
+                curl_setopt($curl, CURLOPT_URL, "http://web/api/posts/category?category=".$_GET["category"]."&p=".$_GET["page"]);
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                 $response = curl_exec($curl);
                 $result = json_decode($response, true);
-                
+                var_dump($result);
         ?>
 
-        <!--ページネーションを入れる -->
+        <!-- ページネーションを入れる
         <br>
         <div id="thumbnail">
             <div class="item">
@@ -72,19 +72,19 @@
                 <p>#dog #cat</p>
                 <p>山田太郎</p>
                 <button onclick="location.href='http://localhost/pages/posts/detail?id=<?php $result[$key]['id']; ?>'" class="detail_button">detail</button>
-            </div>
+            </div> -->
                  
-            <!--
+            
             <?php foreach ( $result as $key => $value ) : ?>
             <div class="item">
-                <img src="<?php print $result[$key]['image']; ?>" width="220" height="175" alt="image not found">
+                <img src="<?php print $result[$key]['image_1']; ?>" width="220" height="175" alt="image not found">
                 <p><?php print $result[$key]['title']; ?></p>
                 <p><?php print $result[$key]['tag']; ?></p>
                 <p><?php print $result[$key]['name']; ?></p>
                 <button onclick="location.href='http://localhost/pages/posts/detail?id=<?php $result[$key]['id']; ?>'" class="detail_button">detail</button>
             </div>
             <?php endforeach; ?>
-            -->
+           
         </div>
     </main>
 </body>

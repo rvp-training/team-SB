@@ -13,8 +13,7 @@ try{
 $category = $_GET["category"];
 $tag = $_GET["tag"];
 
-$prepare = $dbh->prepare('
-SELECT posts.id, image_1, title, name, tag
+$prepare = $dbh->prepare('SELECT posts.id, image_1, title, name, tag
 FROM posts JOIN users
 ON users.id = posts.user_id
 JOIN images 

@@ -9,13 +9,10 @@
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($curl, CURLOPT_POSTFIELDS, $params); 
     $response = curl_exec($curl);
-   var_dump($response);
-   var_dump($_SESSION);
-    if ($response === "ログインしました" && $_SESSION['admin_flag'] === 0){
+    $result = json_decode($response, true);
+    if ($response === "ログインしました"){
         header('Location: http://localhost/pages/posts');
-    } elseif ($response === "ログインしました" && $_SESSION['admin_flag'] === 1) {
-        header('Location: http://localhost/pages/admin/');
-    } else {
+    }  else {
         header('Location: http://localhost/pages/login');
     }
 ?>

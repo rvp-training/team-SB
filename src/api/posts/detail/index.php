@@ -10,10 +10,7 @@ try{
 }
 
 //DBからとってきたデータを配列として格納
-
-
-$_GET["post_id"] =1;
-$post_id = $_GET["post_id"];
+$post_id = $_GET["id"];
 
 $prepare = $dbh->prepare('SELECT posts.id, image_1, image_2, image_3, image_4, image_5, title, text, posts.time, users.name, department, tag, category_id
 FROM posts JOIN users

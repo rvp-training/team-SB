@@ -14,7 +14,7 @@
     //リダイレクト
     if($result="ログアウト処理完了"){
     header("HTTP/1.1 301 Moved Permanently");
-    header("Location:login");
+    header('Location:login');
    } else {
     echo "失敗";
     //ログアウト失敗

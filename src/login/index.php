@@ -17,7 +17,7 @@ session_start();
 // $_POST['mail'] = "senba@hoge.hoge";
 // $_POST['pass'] = "aaaaaaaa";
 
-
+// var_dump($_POST['mail']);
 
 //メールアドレスの方が適正かどうか確認
 if (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
@@ -47,7 +47,7 @@ if ($_POST['pass'] = $row['pass']) {
   $_SESSION['user_id'] = $row['id'];
   $_SESSION['admin_flag'] = $row['admin_flag'];
   $_SESSION['mail'] = $row['mail'];
-  //var_dump($_SESSION);
+  var_dump($_SESSION);
 
   echo 'ログインしました';
   

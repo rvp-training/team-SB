@@ -10,7 +10,6 @@ try{
 }
 
 //DBからとってきたデータを配列として格納
-
 $category = $_GET["category"];
 
 $prepare = $dbh->prepare('SELECT posts.id, image_1, title, name, tag
@@ -29,5 +28,4 @@ $result = $prepare->fetchALL(PDO::FETCH_ASSOC);
 $jsonstr =  json_encode($result, JSON_UNESCAPED_UNICODE);
 
 echo $jsonstr;
-
 ?>

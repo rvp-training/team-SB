@@ -14,77 +14,31 @@
         <!--検索フォーム -->
         <form action="http://localhost/pages/posts/search" method="GET">
         <input class="form-text" type="search" id="tag" name="tag" placeholder="タグを入れて検索">
+        <input type="hidden" name="category" value="<?php echo $_GET['category'] ?>">
         <input type="submit" value="検索">
         </form>
 
         <?php
                 //GET /posts API呼び出し
                 $curl = curl_init();
-                curl_setopt($curl, CURLOPT_URL, "http://web/api/posts/users?category=".$_GET["category"]."&p=".$_GET["page"]);
+                curl_setopt($curl, CURLOPT_URL, "http://web/api/posts/category/?category=".$_GET['category']);
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                 $response = curl_exec($curl);
                 $result = json_decode($response, true);
-                
         ?>
 
-        <!--ページネーションを入れる -->
+        
         <br>
         <div id="thumbnail">
-            <div class="item">
-                <img src="../../images/laptop.jpg" alt="image not found">
-                <p class="title">title</p>
-                <p>tag</p>
-                <p>name</p>
-                <button onclick="location.href='http://localhost/pages/posts/detail?id=<?php $result[$key]['id']; ?>'" class="detail_button">detail</button>
-            </div>
-            <div class="item">
-                <img src="../../images/laptop.jpg" alt="image not found">
-                <p class="title">title</p>
-                <p>tag</p>
-                <p>name</p>
-                <button onclick="location.href='http://localhost/pages/posts/detail?id=<?php $result[$key]['id']; ?>'" class="detail_button">detail</button>
-            </div>
-            <div class="item">
-                <img src="../../images/laptop.jpg" alt="image not found">
-                <p class="title">title</p>
-                <p>tag</p>
-                <p>name</p>
-                <button onclick="location.href='http://localhost/pages/posts/detail?id=<?php $result[$key]['id']; ?>'" class="detail_button">detail</button>
-            </div>
-            <div class="item">
-                <img src="../../images/laptop.jpg" alt="image not found">
-                <p class="title">title</p>
-                <p>tag</p>
-                <p>name</p>
-                <button onclick="location.href='http://localhost/pages/posts/detail?id=<?php $result[$key]['id']; ?>'" class="detail_button">detail</button>
-            </div>
-            <div class="item">
-                <img src="../../images/laptop.jpg" alt="image not found">
-                <p class="title">title</p>
-                <p>tag</p>
-                <p>name</p>
-                <button onclick="location.href='http://localhost/pages/posts/detail?id=<?php $result[$key]['id']; ?>'" class="detail_button">detail</button>
-            </div>
-            
-            <div class="item">
-                <img src="../../images/brussels-griffon-dog-poses-for-the-camera.jpg" alt="image not found">
-                <p class="title">犬派と猫派あなたはどっち？</p>
-                <p>#dog #cat</p>
-                <p>山田太郎</p>
-                <button onclick="location.href='http://localhost/pages/posts/detail?id=<?php $result[$key]['id']; ?>'" class="detail_button">detail</button>
-            </div>
-                 
-            <!--
             <?php foreach ( $result as $key => $value ) : ?>
-            <div class="item">
-                <img src="<?php print $result[$key]['image']; ?>" width="220" height="175" alt="image not found">
-                <p><?php print $result[$key]['title']; ?></p>
-                <p><?php print $result[$key]['tag']; ?></p>
-                <p><?php print $result[$key]['name']; ?></p>
-                <button onclick="location.href='http://localhost/pages/posts/detail?id=<?php $result[$key]['id']; ?>'" class="detail_button">detail</button>
-            </div>
-            <?php endforeach; ?>
-            -->
+                <div class="item">
+                    <img src="<?php print $result[$key]['image_1']; ?>" width="220" height="175" alt="image not found">
+                    <p class="title"><?php print $result[$key]['title']; ?></p>
+                    <p><?php print $result[$key]['tag']; ?></p>
+                    <p><?php print $result[$key]['name']; ?></p>
+                    <button onclick="location.href='http://localhost/pages/posts/detail?id=<?php $result[$key]['posts.id']; ?>'" class="detail_button">detail</button>
+                </div>
+            <?php endforeach; ?>        
         </div>
     </main>
 </body>

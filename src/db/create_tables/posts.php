@@ -8,7 +8,7 @@ try{
         title varchar(255) NOT NULL,
         text varchar(255),
         tag varchar(255),
-        image_id varchar(255),
+        image_id int,
         category_id int REFERENCES categories(id),
         time timestamp NOT NULL
      )";
@@ -26,5 +26,3 @@ if(!$res){
 }
 
 ?>
-
-

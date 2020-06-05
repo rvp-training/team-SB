@@ -10,7 +10,7 @@ try{
 }
 
 //DBからとってきたデータを配列として格納
-// $_POST["user_id"] = 3;
+// $_POST["user_id"] = 1;
 
 $post_id = $_POST["post_id"];
 $user_id = $_POST["user_id"];

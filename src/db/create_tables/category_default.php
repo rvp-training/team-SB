@@ -2,7 +2,6 @@
 try{
     $db = new PDO('pgsql:dbname=postgres;host=db','postgres','password');
 
-    
     $sql = "INSERT INTO categories (category_name) VALUES
     ('business'),
     ('private');

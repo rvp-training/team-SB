@@ -4,7 +4,6 @@ try{
 
     $sql = "CREATE TABLE images (
         id serial PRIMARY KEY NOT NULL,
-        post_id int REFERENCES posts(id),
         image_1 varchar(255) NOT NULL,
         image_2 varchar(255),
         image_3 varchar(255),

@@ -1,5 +1,7 @@
+var required_txt = 'が入力されていません。';
+var email_txt = 'メールアドレスの形式が正しくありません。';
 
-    $('form').validate({
+    $("#userNewForm").validate({
         errorElement: "span",
         errorClass: "alert",
         rules: {
@@ -17,7 +19,8 @@
             },
             mail: {
                 required: true,
-                email : true
+                email : true,
+                maxlength: 45
             },
             pass: {
                 required: true,
@@ -42,8 +45,8 @@
         }
     },
         mail: {
-            required: "メールアドレスを入力してください",
-            email : "正式なメールアドレスを入力してください",
+            required: "メールアドレス"+required_txt,
+            email : "メールアドレスの形式が正しくありません",
             maxlength: "メールアドレスは45文字以内で入力してください"
         }
     },

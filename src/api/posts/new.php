@@ -6,10 +6,9 @@ try{
 } catch(PDOException $e){
     echo 'DB接続エラー; ' . $e->getMessage();
 }
-?>
-<!-- DB接続 -->
 
-<?php
+// DB接続 
+
 if (isset($_POST['upload'])) {
     $sql = "INSERT INTO images(image_1, image_2, image_3, image_4, image_5) VALUES (:name1, :name2, :name3, :name4, :name5) RETURNING id";
     $stmt = $db->prepare($sql);
@@ -30,14 +29,12 @@ if (isset($_POST['upload'])) {
     }
     $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-}
-?> 
-<!-- imagesテーブルに画像データ挿入。 -->
+} 
+// imagesテーブルに画像データ挿入
 
-<?php
 $image_id = $result["id"];
 //posgtsテーブルのimage_idへimageテーブルのidを挿入
-$user_id = 4;
+$user_id = 1;
 // $user_id = $_SESSION['user_id'];
 //postsテーブルのusers_idへログイン中のuserのidを代入
 
@@ -68,7 +65,6 @@ if(!$res){
     echo "\n";
     var_dump($preparecontent->errorInfo());
 }else{
-    echo "投稿に成功しました";
+    header('Location: http://localhost/pages/posts?category='.$category_id);
 }
-
 ?>

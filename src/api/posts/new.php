@@ -32,6 +32,7 @@ if (isset($_POST['upload'])) {
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 }
 ?> 
+<!-- imagesテーブルに画像データ挿入。 -->
 
 <?php
 $image_id = $result["id"];

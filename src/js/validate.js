@@ -1,5 +1,5 @@
-$(function() {
-    $("#userNewForm").validate({
+
+    $('form').validate({
         errorElement: "span",
         errorClass: "alert",
         rules: {
@@ -17,8 +17,7 @@ $(function() {
             },
             mail: {
                 required: true,
-                email : true,
-                maxlength: 45
+                email : true
             },
             pass: {
                 required: true,

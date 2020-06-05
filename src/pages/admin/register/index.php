@@ -14,20 +14,22 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <link href="http://localhost/css/system.css" rel="stylesheet" type="text/css" />
         <link href="http://localhost/css/register.css" rel="stylesheet" type="text/css" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script src="http://localhost/js/validate.js" ></script> 
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="http://localhost/js/validate.js" ></script>  -->
     </head>
     <body>
         <?php include('../../../components/admin/header.php'); ?>
         <?php include('../../../components/admin/sidebar.php'); ?>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/jquery.validate.min.js"></script>
         <main>
         <p class="register-index-title">ユーザーの新規登録</p>
 
-            <form action="http://localhost/pages/admin/register/confirm.php" method="post" id="userNewForm">
+            <form action="http://localhost/pages/admin/register/confirm.php" method="post" >
                 <dl>
                     <dt class="register-index-content">氏名</dt>
                     <dd>
-                        <input type="text" name="name" id="name" size="40" style="height:30px;" placeholder="氏名を入力してください" value="<?php echo (htmlspecialchars($_POST['name'], ENT_QUOTES)); ?>" />
+                        <input type="text" name="name"  size="40" style="height:30px;" placeholder="氏名を入力してください" value="<?php echo (htmlspecialchars($_POST['name'], ENT_QUOTES)); ?>" />
                         
                     </dd>
 

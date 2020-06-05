@@ -36,7 +36,7 @@
                     <p class="title"><?php print $result[$key]['title']; ?></p>
                     <p><?php print $result[$key]['tag']; ?></p>
                     <p><?php print $result[$key]['name']; ?></p>
-                    <button onclick="location.href='http://localhost/pages/posts/detail?id=<?php $result[$key]['id']; ?>'" class="detail_button">detail</button>
+                    <button onclick="location.href='http://localhost/pages/posts/detail?id=<?php print $result[$key]['id']; ?>'" class="detail_button">detail</button>
                 </div>
             <?php endforeach; ?>        
         </div>

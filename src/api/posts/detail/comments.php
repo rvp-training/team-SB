@@ -10,13 +10,11 @@ try{
 }
 
 //DBからとってきたデータを配列として格納
-$_GET["post_id"] = 1;
-$_SESSION["user_id"] = 1;
-$POST["content"] = "成功してくれ";
+// $_POST["user_id"] = 3;
 
-$post_id = $_GET["post_id"];
-$user_id = $_SESSION["user_id"];
-$content = $POST["content"];
+$post_id = $_POST["post_id"];
+$user_id = $_POST["user_id"];
+$content = $_POST["content"];
 
 $prepare = $dbh->prepare("INSERT INTO comments(post_id, user_id, content, time) VALUES( :post_id, :user_id, :content, now());");
 
@@ -26,6 +24,12 @@ $prepare->bindValue(':content',$content,PDO::PARAM_STR);
 
 $prepare->execute();
 
-echo "コメントを投稿しました";
+if(!$res){
+    echo "コメント投稿に失敗しました！";
+    echo "\n";
+    var_dump($prepare->errorInfo());
+}else{
+    echo "コメント投稿に成功しました";
+}
 
 ?>

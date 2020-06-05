@@ -37,8 +37,8 @@ if (isset($_POST['upload'])) {
 <?php
 $image_id = $result["id"];
 //posgtsテーブルのimage_idへimageテーブルのidを挿入
-
-$user_id = $_SESSION['user_id'];
+$user_id = 4;
+// $user_id = $_SESSION['user_id'];
 //postsテーブルのusers_idへログイン中のuserのidを代入
 
 $title = $_POST["title"];
@@ -46,9 +46,10 @@ $text = $_POST["text"];
 $tag = $_POST["tag"];
 $category_id = $_POST["category_id"];
 
+
 $preparecontent = $db->prepare('INSERT INTO posts ( 
-    title, text, tag, image_id, user_id) 
-    VALUES ( :title, :text, :tag, :image_id, :user_id, :category_id);');
+    title, text, tag, image_id, user_id, category_id ,time) 
+    VALUES ( :title, :text, :tag, :image_id, :user_id, :category_id, now());');
 
 $preparecontent->bindValue(':title',(string)$title,PDO::PARAM_STR);
 $preparecontent->bindValue(':text',(string)$text,PDO::PARAM_STR);
@@ -58,8 +59,16 @@ $preparecontent->bindValue(':user_id',(string)$user_id,PDO::PARAM_STR);
 $preparecontent->bindValue(':category_id',(string)$category_id,PDO::PARAM_STR);
 
 
-$preparecontent->execute();
-// タイトル、テキスト、タグの投稿
 
-echo "登録完了しました";
+
+$res = $preparecontent->execute();
+
+if(!$res){
+    echo "投稿に失敗しました！";
+    echo "\n";
+    var_dump($preparecontent->errorInfo());
+}else{
+    echo "投稿に成功しました";
+}
+
 ?>

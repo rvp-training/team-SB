@@ -12,7 +12,7 @@ try{
 //DBからとってきたデータを配列として格納
 $post_id = $_GET["id"];
 
-$prepare = $dbh->prepare('SELECT posts.id, image_1, image_2, image_3, image_4, image_5, title, text, posts.time, users.name, department, tag, category_id
+$prepare = $dbh->prepare('SELECT posts.id, image_1, image_2, image_3, image_4, image_5, title, text, posts.time, users.name, department, position, delete_flag, tag, category_id
 FROM posts JOIN users
 ON users.id = posts.user_id
 JOIN images 
@@ -25,7 +25,7 @@ $prepare->execute();
 
 $main = $prepare->fetchALL(PDO::FETCH_ASSOC);
 
-$prepare1 = $dbh->prepare('SELECT comments.id, name, department, content, time
+$prepare1 = $dbh->prepare('SELECT comments.id, name, department, position, delete_flag, content, time
 FROM comments JOIN users
 ON users.id = comments.user_id
 WHERE post_id = :post_id;');

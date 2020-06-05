@@ -41,9 +41,10 @@
         <div>
             <div id="description_frame">
                 <p id="user_name"><?php print $main["name"]."@";
-                                        print $main["position"];
+                                        print $main["department"];
                                         print $main["position"]."："; 
-                                        //退職済みの場合をif文で追加 ?></p>
+                                        if ($main["delete_flag"] === 1){
+                                            print "(退職済み)"; } ?></p>
                 <p id="title"><?php print $main["title"] ?></p>
                 <p id="text"><?php print $main["text"] ?></p>
                 <p id="tag"><?php print $main["tag"] ?></p>
@@ -54,9 +55,10 @@
                 <p id="comment">コメント：</p>
                 <p class="content"><?php print $comments[$key]["content"] ?></p>
                 <p class="comment_user_name"><?php print $comments[$key]["name"]."@";
-                                                    print $comments[$key]["position"];
-                                                    print $comments[$key]["position"]."："; 
-                                                    //退職済みの場合をif文で追加 ?></p>
+                                                    print $comments[$key]["department"];
+                                                    print $comments[$key]["position"]; 
+                                                    if ($comments[$key]["delete_flag"] === 1){
+                                                    print "(退職済み)"; }?></p>
             </div>
             <?php endforeach ?>
             <div class="input_frame">

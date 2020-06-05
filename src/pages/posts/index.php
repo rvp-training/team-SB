@@ -32,7 +32,6 @@
         <div id="thumbnail">
             <?php foreach ( $result as $key => $value ) : ?>
                 <div class="item">
-                    <p><?php print $result[$key]['image_1']; ?></p>
                     <img src="../../../images/<?php print $result[$key]['image_1']; ?>" width="220" height="175" alt="image not found">
                     <p class="title"><?php print $result[$key]['title']; ?></p>
                     <p><?php print $result[$key]['tag']; ?></p>

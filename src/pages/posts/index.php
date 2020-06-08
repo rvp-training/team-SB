@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php 
+
+    ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,13 +20,20 @@
         <input type="submit" value="検索">
         </form>
 
-        <?php
+        <?php session_start();
+            session_start();
+            if(isset($_SESSION['user_id'])){
+                echo "ログインできています";
+              }else{
+                "ログインできていない"
+                ;}
                 //GET /posts API呼び出し
                 $curl = curl_init();
                 curl_setopt($curl, CURLOPT_URL, "http://web/api/posts/category/?category=".$_GET['category']);
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                 $response = curl_exec($curl);
                 $result = json_decode($response, true);
+                
         ?>
 
         

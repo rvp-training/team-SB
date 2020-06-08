@@ -18,7 +18,7 @@ if (isset($_POST['upload'])) {
             $stmt->bindValue(':name'.$no, '', PDO::PARAM_STR);
             continue;
         }
-        $image = uniqid(mt_rand(), true);//ファイル名をユニーク化
+        $image = uniqid();//ファイル名をユニーク化
         $image .= '.' . substr(strrchr($_FILES['image']['name'][$i], '.'), 1);
         $file = "/images/$image";
         if (move_uploaded_file($_FILES['image']['tmp_name'][$i], $file)){
@@ -34,8 +34,8 @@ if (isset($_POST['upload'])) {
 
 $image_id = $result["id"];
 //posgtsテーブルのimage_idへimageテーブルのidを挿入
-$user_id = 1;
-// $user_id = $_SESSION['user_id'];
+// $user_id = 1;
+$user_id = $_SESSION['user_id'];
 //postsテーブルのusers_idへログイン中のuserのidを代入
 
 $title = $_POST["title"];

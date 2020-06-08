@@ -7,7 +7,15 @@ services:
     ports:
       - $WEB_PORT:80
     volumes:
-      - ./src:/var/www/html:ro
+      - ./images:/var/www/html/images:ro
+      - ./src/api:/var/www/html/api:ro
+      - ./src/components:/var/www/html/components:ro
+      - ./src/css:/var/www/html/css:ro
+      - ./src/db:/var/www/html/db:ro
+      - ./src/js:/var/www/html/js:ro
+      - ./src/login:/var/www/html/login:ro
+      - ./src/logout:/var/www/html/logout:ro
+      - ./src/pages:/var/www/html/pages:ro
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
 
   php:

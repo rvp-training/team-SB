@@ -18,7 +18,7 @@ if (isset($_POST['upload'])) {
             $stmt->bindValue(':name'.$no, '', PDO::PARAM_STR);
             continue;
         }
-        $image = uniqid(mt_rand(), true);//ファイル名をユニーク化
+        $image = uniqid();//ファイル名をユニーク化
         $image .= '.' . substr(strrchr($_FILES['image']['name'][$i], '.'), 1);
         $file = "/images/$image";
         if (move_uploaded_file($_FILES['image']['tmp_name'][$i], $file)){

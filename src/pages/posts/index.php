@@ -27,6 +27,52 @@
                 $result = json_decode($response, true);
         ?>
 
+        <!-- ページネーション -->
+        <?php 
+            $page = $_REQUEST['page'];
+                if ($page = ''){
+                    $page = 1;
+                }
+            
+            $page = max($page, 1);
+
+            // 最終ページを取得する
+            $counts = $db->query('SELECT COUNT(*) AS cnt FROM posts');
+            $cnt = $counts->fetch();
+            $maxPage = ceil($cnt[''] / 5);
+            $page = min($page, $maxPage);
+
+            $start = ($page - 1) * 5;
+
+            // $posts = $db->prepare('SELECT m.name, m.picture, p.* FROM members m, posts p WHERE m.id=p.member_id ORDER BY p.created DESC LIMIT ?, 5');
+            $posts->bindparam(1, $start, PDO::PARAM_INT);
+            $posts->execute();
+        ?>
+
+        <ul class="paging">
+            <?php
+                if ($page > 1){
+            ?>
+            <li><a href="index.php?page=<?php print($page - 1); ?>">前のページへ</a></li>
+            <?php
+                }else{
+            ?>
+            <li>前のページへ</li>
+            <?php
+                }
+            ?>
+            <?php
+                if ($page < $maxPage){
+            ?>
+            <li><a href="index.php?page=>\<?php print($page + 1); ?>">次のページへ</a></li>
+            <?php
+                }else{
+            ?>
+            <li>次のページへ</li>
+            <?php
+                }
+            ?>
+        </ul>
         
         <br>
         <div id="thumbnail">

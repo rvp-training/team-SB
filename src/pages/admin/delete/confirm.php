@@ -50,16 +50,10 @@
             <?php endforeach; ?>
             </table>
             <?php curl_close($curl); ?>
-
             <br>
-            <form method="GET" action="http://web/api/admin/users/delete_test?id=<?php print $_GET["id"] ?>">
-<input type="hidden" name="id" value=<?php $_GET["id"] ?> >
-
-<input type="submit" value="submit">
-</form>
-            <div style="text-align:center;">
+            <div class="center">
                 <button onclick="location.href='http://localhost/pages/admin/delete/complete?id=<?php print $_GET["id"] ?>'"
-                class="delete_button" id="delete_button">削除</button>
+                class="delete_button">削除</button>
             </div>            
 
         </main>

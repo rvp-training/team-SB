@@ -18,7 +18,7 @@
     if ($response === "変更完了しました"){
         header('Location: http://localhost/pages/admin/index.php');
     } else {
-        header('Location: http://localhost/pages/admin/users');
+        header('Location: http://localhost/pages/admin/users.php');
     }
 ?>
 <!DOCTYPE html>

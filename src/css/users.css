@@ -1,23 +1,28 @@
-/* index */
-.user-edit-title{
-  font-weight: bold;
-  font-size: 18px;
-  margin-left: 40px;
-}
-.user-edit-content{
-  margin-left: 40px;
-  padding:3px;
-  font-weight: bold;
+/*共通*/
+
+.button{
+  font-family: Noto Sans JP;
+  font-style: normal;
   font-size: 14px;
+  color: #fff;
+  width: 100px;
+  height: 30px;
+  border: 2px;
+  background-color: #EE3B2C;
+  border-radius: 7px;
 }
 
-/* confirm */
-.edit-confirm-title{
-  font-weight: bold;
-  font-size: 18px;
-  margin-bottom: 30px;
+.center{
+  text-align:center;
 }
 
+.center input{
+  display: inline-block;
+  margin: 10px 0;
+  vertical-align: middle;
+}
+
+/*users*/   
 table{
   border-collapse: collapse;
   border-spacing: 0;
@@ -48,14 +53,13 @@ table td {
   width: 200px;
   border:solid 1px #ddd;
 }
-  
+
 .edit_button {
   font-family: Noto Sans JP;
   font-style: normal;
-  font-weight: bold;
   font-size: 14px;
   padding: 10px 30px; 
-  background-color: rgba(238, 59, 44, 0.4);
+  background-color:#EE3B2C;
   border-radius: 6px;
   color: #ffffff;
 }
@@ -63,11 +67,55 @@ table td {
 .delete_button {
   font-family: Noto Sans JP;
   font-style: normal;
-  font-weight: bold;
   font-size: 14px;
   padding: 10px 30px; 
   background-color:#CB0808;
   border-radius: 6px;
   color: #ffffff;
+}
 
+/*edit*/
+/* index */
+.user-edit-title{
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 40px;
+}
+.user-edit-content{
+  margin-left: 40px;
+  padding:3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.user-input{
+  width: 300px;
+  height: 30px;
+}
+
+/* confirm */
+.edit-confirm-title{
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/*register*/
+/* index */
+.register-index-title{
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 40px;
+}
+.register-index-content{
+  margin-left: 40px;
+  padding:3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* confirm */
+.register-confirm-title{
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 30px;
 }

@@ -4,7 +4,7 @@
         System
         </div>
         <div class="register_button">
-            <a href='http://localhost/pages/posts/new'>新規投稿</a>
+            <a href='http://localhost/pages/posts/new.php'>新規投稿</a>
         </div>
     </div>
 </header>

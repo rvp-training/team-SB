@@ -15,7 +15,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./src:/var/www/html:ro
-
+      - ./images:/images
   db:
     image: postgres:12-alpine
     restart: unless-stopped

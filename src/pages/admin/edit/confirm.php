@@ -15,8 +15,8 @@
                 <link href="http://localhost/css/users.css" rel="stylesheet" type="text/css" /> 
     </head>
     <body>
-        <?php include('../../../components/admin/header.php'); ?>
-        <?php include('../../../components/admin/sidebar.php'); ?>
+        <?php include dirname(__FILE__) . '/../../../components/admin/header.php'; ?>
+        <?php include dirname(__FILE__) . '/../../../components/admin/sidebar.php'; ?>
         <main>
             <div class="edit-confirm-title">この内容で登録してよろしいですか</div>
             <table>

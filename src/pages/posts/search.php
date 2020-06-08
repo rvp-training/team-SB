@@ -8,8 +8,8 @@
      
 </head>
 <body>
-    <?php include('../../components/posts/header.php'); ?>
-    <?php include('../../components/posts/sidebar.php'); ?>
+    <?php include dirname(__FILE__) . '/../../components/posts/header.php'; ?>
+    <?php include dirname(__FILE__) . '/../../components/posts/sidebar.php'; ?>
     <main>
         <!--検索フォーム -->
         <form action="http://localhost/pages/posts/search.php" method="GET">

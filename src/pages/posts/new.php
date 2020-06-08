@@ -6,8 +6,8 @@
      
 </head>
 <body>
-    <?php include('../../components/posts/header.php'); ?>
-    <?php include('../../components/posts/sidebar.php'); ?>
+    <?php include dirname(__FILE__) . '/../../components/posts/header.php'; ?>
+    <?php include dirname(__FILE__) . '/../../components/posts/sidebar.php'; ?>
     <main>
         <form action="http://localhost/api/posts/new" method="post" enctype="multipart/form-data">       
             <p>送信ファイル</p>

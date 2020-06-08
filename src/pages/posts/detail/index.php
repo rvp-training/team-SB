@@ -9,8 +9,8 @@
         <script src="http://localhost/js/detail.js"></script>
 </head>
 <body>
-    <?php include('../../../components/posts/header.php'); ?>
-    <?php include('../../../components/posts/sidebar.php'); ?>
+    <?php include dirname(__FILE__) . '/../../../components/posts/header.php'; ?>
+    <?php include dirname(__FILE__) . '/../../../components/posts/sidebar.php'; ?>
     <main>
         <?php
             //GET /posts/detail API呼び出し

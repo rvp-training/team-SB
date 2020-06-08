@@ -10,8 +10,8 @@
 </head>
 <body>
     <div id="wrapper">
-        <?php include('../../../components/admin/header.php'); ?>
-        <?php include('../../../components/admin/sidebar.php'); ?>
+        <?php include dirname(__FILE__) . '/../../../components/admin/header.php'; ?>
+        <?php include dirname(__FILE__) . '/../../../components/admin/sidebar.php'; ?>
         <main>
             
             <?php

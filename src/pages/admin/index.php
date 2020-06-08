@@ -8,8 +8,8 @@
      
 </head>
 <body>
-    <?php include('../../components/admin/header.php'); ?>
-    <?php include('../../components/admin/sidebar.php'); ?>
+    <?php include dirname(__FILE__) . '/../../components/admin/header.php'; ?>
+    <?php include dirname(__FILE__) . '/../../components/admin/sidebar.php'; ?>
     <main>
         <div id="container">
             <div id="itemA"><button onclick="location.href='http://localhost/pages/admin/users'" class="menu">ユーザー一覧</button></div>

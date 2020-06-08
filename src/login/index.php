@@ -32,9 +32,10 @@ if (!isset($row['mail'])) {
 if ($_POST['pass'] == $row['pass']) {
     session_regenerate_id(true); //session_idを新しく生成し、置き換える
     $_SESSION['user_id'] = $row['id'];
-    header('Location: http://localhost/pages/posts/?category=1');
+    header('Location: ../pages/posts/?category=1');
 
 } else {
-    header('Location: http://localhost/pages/login');
+    header('Location: ../pages/login');
 
 }
+?>

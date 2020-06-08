@@ -45,14 +45,7 @@ $jsonstr =  json_encode($result_p, JSON_UNESCAPED_UNICODE);
 echo $jsonstr;
 
 
-// 以下参考程度です
-// 最大ページ数分リンクを作成
-for($i = 1; $i <= $max_page; $i++){
-    if ($i == $now) { 
-        echo $now. '　'; 
-    } else {//echo以下は仮です
-        echo '<a href=\'/test.php?p='. $i. '\')>'. $i. '</a>'. '　';
-    }
+
 } 
  
 ?>

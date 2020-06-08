@@ -1,6 +1,4 @@
-<?php 
-
-    ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,17 +19,25 @@
         </form>
 
         <?php
-                //GET /posts API呼び出し
-                $curl = curl_init();
-                curl_setopt($curl, CURLOPT_URL, "http://web/api/posts/category/?category=".$_GET['category']);
-                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-                $response = curl_exec($curl);
-                $result = json_decode($response, true);
-                
+            //GET /posts API呼び出し
+            $curl = curl_init();
+            curl_setopt($curl, CURLOPT_URL, "http://web/api/posts/category/?category=".$_GET['category']);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            $response = curl_exec($curl);
+            $result = json_decode($response, true);
         ?>
 
+        <?php 
+            // 以下参考程度です
+            // 最大ページ数分リンクを作成
+            for($i = 1; $i <= $max_page; $i++){
+                if ($i == $now) { 
+                    echo $now. '　'; 
+                } else {//echo以下は仮です
+                    echo '<a href=\'/test.php?p='. $i. '\')>'. $i. '</a>'. '　';
+                }
+        ?>
         
-
         <ul class="paging">
             <?php
                 if ($page > 1){
@@ -45,7 +51,7 @@
                 }
             ?>
             <?php
-                if ($page < $max_page){
+                if ($page < $maxPage){
             ?>
             <li><a href="index.php?page=>\<?php print($page + 1); ?>">次のページへ</a></li>
             <?php

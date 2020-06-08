@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php 
+
+    ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,6 +27,7 @@
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                 $response = curl_exec($curl);
                 $result = json_decode($response, true);
+                
         ?>
 
         

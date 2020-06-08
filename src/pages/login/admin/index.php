@@ -7,7 +7,7 @@
 <body>
     <div id="login_bg_admin">
         <div id="login_box">
-            <form action="http://localhost/login/admin.php" method="POST">
+            <form action="http://localhost/pages/login/admin/check" method="POST">
                 <label for="mail" class="login_text">メールアドレス</label>
                 <p><input class="form-text" type="text" name="mail" maxlength="45" placeholder=
                 "<?php if (isset($_POST["mail"])){
@@ -24,5 +24,3 @@
     </div>
 </body>
 </html>
-
-INSERT INTO users VALUES (5,'aaa','aaa','admin@co.jp','admin',0,1);

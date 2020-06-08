@@ -6,7 +6,7 @@
          <li class="sidebar_item"><a href="http://localhost/pages/posts?category=2">プライベート</a></li>
         </ul>   
         <div class="sidebar_item_fixed">
-            <a href="http://localhost/logout/index.php">ログアウト</a>
+            <a href="http://localhost/pages/logout">ログアウト</a>
         </div>
     </div>
 </div>

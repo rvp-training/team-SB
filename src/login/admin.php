@@ -37,9 +37,11 @@ if ($_POST['pass'] == $row['pass']) {
   session_regenerate_id(true); //session_idを新しく生成し、置き換える
 
   $_SESSION['user_id'] = $row['id'];
-  header('Location: http://localhost/pages/admin');
-
+  $_SESSION['admin_flag'] = $row['admin_flag'];
+  $_SESSION['mail'] = $row['mail'];
+  echo 'ログインしました';
 } else {
-  header('Location: http://localhost/pages/login/admin');
+  echo 'メールアドレス又はパスワードが間違っています。';
+  return false;
 }
 ?>

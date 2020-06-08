@@ -24,18 +24,18 @@
         ?>
         <div class=image_wrapper>
             <ul class="pictures_l">    
-                <li class="picture_l active"><img src="<?php echo $main["image_1"]; ?>"></li>
-                <li class="picture_l"><img src="<?php echo $main["image_2"]; ?>" ></li>
-                <li class="picture_l"><img src="<?php echo $main["image_3"]; ?>" ></li>
-                <li class="picture_l"><img src="<?php echo $main["image_4"]; ?>" ></li>
-                <li class="picture_l"><img src="<?php echo $main["image_5"]; ?>" ></li>
+                <li class="picture_l active"><img src="../../../images/<?php echo $main["image_1"]; ?>"></li>
+                <li class="picture_l"><img src="../../../images/<?php echo $main["image_2"]; ?>" alt="image not found"></li>
+                <li class="picture_l"><img src="../../../images/<?php echo $main["image_3"]; ?>" alt="image not found"></li>
+                <li class="picture_l"><img src="../../../images/<?php echo $main["image_4"]; ?>" alt="image not found"></li>
+                <li class="picture_l"><img src="../../../images/<?php echo $main["image_5"]; ?>" alt="image not found"></li>
             </ul>
             <ul class="pictures_s">
-                <li class="picture_s"><img src="<?php echo $main["image_1"]; ?>" id="image_1"></li>
-                <li class="picture_s"><img src="<?php echo $main["image_2"]; ?>" id="image_2"></li>
-                <li class="picture_s"><img src="<?php echo $main["image_3"]; ?>" id="image_3"></li>
-                <li class="picture_s"><img src="<?php echo $main["image_4"]; ?>" id="image_4"></li>
-                <li class="picture_s"><img src="<?php echo $main["image_5"]; ?>" id="image_5"></li>
+                <li class="picture_s"><img src="../../../images/<?php echo $main["image_1"]; ?>" id="image_1" alt="image not found"></li>
+                <li class="picture_s"><img src="../../../images/<?php echo $main["image_2"]; ?>" id="image_2" alt="image not found"></li>
+                <li class="picture_s"><img src="../../../images/<?php echo $main["image_3"]; ?>" id="image_3" alt="image not found"></li>
+                <li class="picture_s"><img src="../../../images/<?php echo $main["image_4"]; ?>" id="image_4" alt="image not found"></li>
+                <li class="picture_s"><img src="../../../images/<?php echo $main["image_5"]; ?>" id="image_5" alt="image not found"></li>
             </ul>
         </div>
         <div>

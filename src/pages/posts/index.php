@@ -20,13 +20,7 @@
         <input type="submit" value="検索">
         </form>
 
-        <?php session_start();
-            session_start();
-            if(isset($_SESSION['user_id'])){
-                echo "ログインできています";
-              }else{
-                "ログインできていない"
-                ;}
+        <?php
                 //GET /posts API呼び出し
                 $curl = curl_init();
                 curl_setopt($curl, CURLOPT_URL, "http://web/api/posts/category/?category=".$_GET['category']);

@@ -145,30 +145,9 @@ main {
     width: 400px;
 }
 
-#paging {
+.paging{
+    list-style: none;
+    display: inline-block;
     padding: 3px;
+    margin-top: 30px;
 }
-
-#paging ul li {
-    display: block;
-}
-
-#paging ul li a {
-    text-decoration: none;
-}
-
-#paging ul li a:hover{
-    border-bottom: #828282;
-}
-
-.post_button {
-    font-family: Noto Sans JP;
-    font-style: normal;
-    font-size: 14px;
-    color: #fff;
-    width: 100px;
-    height: 30px;
-    border: 2px;
-    background-color: #1F0F83;;
-    border-radius: 7px;
-}  

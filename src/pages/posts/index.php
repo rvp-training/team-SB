@@ -32,25 +32,25 @@
                 $max_page = $result['max_page'];
                 $page = $result['now'];
             ?>
-            <ul id="paging">
+            <ul>
                 <?php if ($page > 1): ?>
-                    <li><a href="./?category=<?php print $_GET['category'] ?>&p=<?php print($page - 1); ?>">前へ</a></li>
+                    <li class="paging"><a href="./?category=<?php print $_GET['category'] ?>&p=<?php print($page - 1); ?>">前へ</a></li>
                 <?php else: ?>
-                    <li>前へ</li>
+                    <li class="paging">前へ</li>
                 <?php endif; ?>
                 
                 <?php for ($i = 1; $i <= $max_page; $i++) : ?>
                     <?php if ($i == $page): ?>
-                        <li><a><?php echo $i ?></a></li>
+                        <li class="paging"><a><?php echo $i ?></a></li>
                     <?php else: ?>
-                        <li><a href="./?category=<?php print $_GET['category'] ?>&p=<?php print $i; ?>"><?php echo $i ?></a></li>
+                        <li class="paging"><a href="./?category=<?php print $_GET['category'] ?>&p=<?php print $i; ?>"><?php echo $i ?></a></li>
                     <?php endif; ?>
                 <?php endfor; ?>
 
                 <?php if ($page < $max_Page): ?>
-                    <li><a href="./?category=<?php print $_GET['category'] ?>&p=<?php print($page + 1); ?>">次へ</a></li>
+                    <li class="paging"><a href="./?category=<?php print $_GET['category'] ?>&p=<?php print($page + 1); ?>">次へ</a></li>
                 <?php else: ?>
-                    <li>次へ</li>
+                    <li class="paging">次へ</li>
                 <?php endif; ?>
             </ul>
             <?php

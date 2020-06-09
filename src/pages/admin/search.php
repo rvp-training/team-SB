@@ -13,20 +13,54 @@
     <main>
         
         <!--検索フォーム -->
-        <form action="http://localhost/pages/admin/search" method="GET">
+        <form action="http://localhost/pages/admin/search/index.php" method="GET">
         <input class="form-text" type="search" id="name" name="name" placeholder=
         <?php if (isset($_GET["name"])){
             print $_GET["name"];
         }else{
             print "氏名を入力";
-        }?>>
+        }?> required>
         <input type="submit" value="検索">
         </form>
+        <?php
+            //GET /admin/users/search/pagination API呼び出し
+            $curl = curl_init();
+            curl_setopt($curl, CURLOPT_URL, "http://web/api/admin/users/search/pagination?name=".$_GET['name']."&p=".$_GET['p']);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            $response = curl_exec($curl);
+            $result = json_decode($response, true);
+            curl_close($curl);
+        ?>
+        <?php 
+            // 最大ページ数分リンクを作成
+            $max_page = $result['max_page'];
+            $page = $result['now'];
+        ?>
+        <ul id="paging">
+            <?php if ($page > 1): ?>
+                <li><a href="./search?p=<?php print($page - 1); ?>">前へ</a></li>
+            <?php else: ?>
+                <li>前へ</li>
+            <?php endif; ?>
+            
+            <?php for ($i = 1; $i <= $max_page; $i++) : ?>
+                <?php if ($i == $page): ?>
+                    <li><a><?php echo $i ?></a></li>
+                <?php else: ?>
+                    <li><a href="./search?p=<?php print $i; ?>"><?php echo $i ?></a></li>
+                <?php endif; ?>
+            <?php endfor; ?>
 
+            <?php if ($page < $max_Page): ?>
+                <li><a href="./search?p=<?php print($page + 1); ?>">次へ</a></li>
+            <?php else: ?>
+                <li>次へ</li>
+            <?php endif; ?>
+        </ul>
         <?php
                 //GET /admin/users/search API呼び出し
                 $curl = curl_init();
-                curl_setopt($curl, CURLOPT_URL, "http://web/api/admin/users/search?name=".$_GET['name']);
+                curl_setopt($curl, CURLOPT_URL, "http://web/api/admin/users/search/index?name=".$_GET['name']."&p=".$_GET['p']);
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                 $response = curl_exec($curl);
                 $result = json_decode($response, true);

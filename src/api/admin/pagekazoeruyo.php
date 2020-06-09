@@ -23,7 +23,7 @@ $max_page = ceil($books_num / $max); // トータルページ数
 
 $_GET['p'] = 2;
  
-if(!isset($_GET['p'])){ // $_GET['p'] はURLに渡された現在のページ数
+if(!isset($_GET['p']) || $_GET['p'] == 0 ){ // $_GET['p'] はURLに渡された現在のページ数
     $now = 1; // 設定されてない場合は1ページ目にする
 }else{
     $now = $_GET['p'];

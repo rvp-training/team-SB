@@ -143,3 +143,19 @@ main {
     padding: 10.130px;
     width: 400px;
 }
+
+#paging {
+    padding: 3px;
+}
+
+#paging ul li {
+    display: block;
+}
+
+#paging ul li a {
+    text-decoration: none;
+}
+
+#paging ul li a:hover{
+    border-bottom: #828282;
+}

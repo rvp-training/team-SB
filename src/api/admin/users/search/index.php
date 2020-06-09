@@ -1,5 +1,5 @@
 <?php
-
+// 文字コード設定
 header('Content-Type: text/json; charset=UTF-8');
 
 //DBと接続
@@ -19,10 +19,17 @@ if(!isset($_GET['p']) || $_GET['p'] == 0 ){ // $_GET['p'] はURLに渡された�
  
 $start_no = ($now - 1) * $max; // 配列の何番目から取得すればよいか
 
-$prepare = $dbh->prepare('SELECT * FROM users WHERE delete_flag = 0 LIMIT :max_p OFFSET :start_no;');
+//DBからとってきたデータを配列として格納
 
+$name = $_GET["name"] ;
+$name = '%'.$name.'%';
+
+$prepare = $dbh->prepare('SELECT * FROM users WHERE name LIKE :name AND delete_flag = 0 LIMIT :max_p OFFSET :start_no;');
+
+$prepare->bindValue(':name',$name,PDO::PARAM_STR);
 $prepare->bindValue(':max_p',(int)$max,PDO::PARAM_INT);
 $prepare->bindValue(':start_no',(int)$start_no,PDO::PARAM_INT);
+
 
 $prepare->execute();
 
@@ -32,6 +39,4 @@ $jsonstr =  json_encode($result, JSON_UNESCAPED_UNICODE);
 
 echo $jsonstr;
 
-
 ?>
-  

@@ -51,7 +51,7 @@
     left: 0px;
     height: 60px;
     width: 100%;
-    background-color: #1F0F83;;
+    background-color: #1F0F83;
 }
 
 .header_02 {
@@ -106,12 +106,13 @@
     box-sizing: border-box;
 }
 
-.sidebar_item link{
+.sidebar_link{
     font-family: Open Sans;
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
     color: #828282;
+    text-decoration: none;
 }
 
 .sidebar_item_fixed {
@@ -159,3 +160,15 @@ main {
 #paging ul li a:hover{
     border-bottom: #828282;
 }
+
+.post_button {
+    font-family: Noto Sans JP;
+    font-style: normal;
+    font-size: 14px;
+    color: #fff;
+    width: 100px;
+    height: 30px;
+    border: 2px;
+    background-color: #1F0F83;;
+    border-radius: 7px;
+}  

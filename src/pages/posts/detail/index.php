@@ -64,7 +64,7 @@
             <div class="input_frame">
                 <div class="input_form">
                     <form action="http://localhost/pages/posts/detail/comments.php" method="POST">
-                        <input class="form-text" id="content" name="content" placeholder="コメントを入力してください">
+                        <input class="form-text" id="content" name="content" maxlength="150" placeholder="コメントを入力してください" required>
                         <input type="hidden" name="post_id" value="<?php print $_GET['id']?>">
                         <input type="hidden" name="user_id" value="<?php print $_SESSION['user_id']?>">
                         <input type="submit" value="投稿">

@@ -24,7 +24,12 @@
         ?>
         <div class=image_wrapper>
             <ul class="pictures_l">    
-                <li class="picture_l active"><img src="../../../images/<?php echo $main["image_1"]; ?>"></li>
+                <li class="picture_l active">
+                    <?php if(isset($main["image1"])): ?>
+                        <img src="../../../images/<?php echo $main["image_1"]; ?>" alt="image not found"></li>
+                    <?php else: ?>
+                        <img src="../../../images/<?php echo"noimage.png"; ?>" alt="image not found"></li>
+                    <?php endif; ?> 
                 <li class="picture_l"><img src="../../../images/<?php echo $main["image_2"]; ?>" alt="image not found"></li>
                 <li class="picture_l"><img src="../../../images/<?php echo $main["image_3"]; ?>" alt="image not found"></li>
                 <li class="picture_l"><img src="../../../images/<?php echo $main["image_4"]; ?>" alt="image not found"></li>

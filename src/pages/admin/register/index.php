@@ -44,7 +44,7 @@
                     </dd>
                 </dl>
                 <input type="hidden" name="redirect" value="admin/register/confirm.php"/>
-                <input type="submit" class="button" value="登録"/>
+                <input type="submit" class="button" value="登録"  style="margin-left:130px;"/>
                 </form>  
             </div>
         </main>

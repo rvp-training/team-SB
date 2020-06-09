@@ -16,19 +16,19 @@
             <input type="file" name="image[]" multiple = "multiple" >
             <input type="file" name="image[]" multiple = "multiple" >
             <input type="file" name="image[]" multiple = "multiple" >
+            <br>
+            <dl>
+                <dt>タイトル</dt>
+                <dd><input class="form-input" type="text" name="title" maxlength="30" placeholder="タイトルを入力してください" required></input></dd>
                 <br>
-                <dl>
-
-            <dt>タイトル</dt>
-            <dd><input class="form-input" type="text" name="title" maxlength="30" placeholder="タイトルを入力してください" required></input></dd>
+                <dt>テキスト</dt>
+                <dd><input class="form-input" type="text" name="text" maxlength="1000" placeholder="テキストを入力してください"></input></dd>
+                <br>
+                <dt>タグ</dt>
+                <dd><input class="form-input" type="text" name="tag" maxlength="90" placeholder="タグを入力してください"></input></dd>
+            </dl>
             <br>
-            <dt>テキスト</dt>
-            <dd><input class="form-input" type="text" name="text" maxlength="1000" placeholder="テキストを入力してください"></input></dd>
-            <br>
-            <dt>タグ</dt>
-            <dd><input class="form-input" type="text" name="tag" maxlength="90" placeholder="タグを入力してください"></input></dd>
         </dl>
-               <br>
             <input type="radio" name="category_id" value="1" checked>ビジネス</input>
             <input type="radio" name="category_id" value="2">プライベート</input>  
             <br><br>

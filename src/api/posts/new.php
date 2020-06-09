@@ -37,7 +37,7 @@ $image_id = $result["id"];
 
 $user_id = $_SESSION['user_id'];
 //postsテーブルのusers_idへログイン中のuserのidを代入
-$user_id = 1;
+// $user_id = 1;
 $title = $_POST["title"];
 $text = $_POST["text"];
 $tag = $_POST["tag"];

@@ -21,7 +21,7 @@
         <?php
             //GET /posts/search/pagination API呼び出し
             $curl = curl_init();
-            curl_setopt($curl, CURLOPT_URL, "http://web/api/posts/search/pagination?id=".$_GET['category']."&tag=".$_GET['tag']."&p=".$_GET['p']);
+            curl_setopt($curl, CURLOPT_URL, "http://web/api/posts/search/pagination?category=".$_GET['category']."&tag=".$_GET['tag']."&p=".$_GET['p']);
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
             $response = curl_exec($curl);
             $result = json_decode($response, true);

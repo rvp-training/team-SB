@@ -1,5 +1,5 @@
 <?php
-
+// 文字コード設定
 header('Content-Type: text/json; charset=UTF-8');
 
 //DBと接続
@@ -9,6 +9,7 @@ try{
     echo 'DB接続エラー; ' . $e->getMessage();
 }
 
+
 // ページネーション
 $max = 20;
 if(!isset($_GET['p']) || $_GET['p'] == 0 ){ // $_GET['p'] はURLに渡された現在のページ数
@@ -16,22 +17,26 @@ if(!isset($_GET['p']) || $_GET['p'] == 0 ){ // $_GET['p'] はURLに渡された�
 }else{
     $now = $_GET['p'];
 }
- 
-$start_no = ($now - 1) * $max; // 配列の何番目から取得すればよいか
 
-$prepare = $dbh->prepare('SELECT * FROM users WHERE delete_flag = 0 LIMIT :max_p OFFSET :start_no;');
+$name = $_GET["name"] ;
+$name = '%'.$name.'%';
 
-$prepare->bindValue(':max_p',(int)$max,PDO::PARAM_INT);
-$prepare->bindValue(':start_no',(int)$start_no,PDO::PARAM_INT);
+$prepare = $dbh->prepare('SELECT id FROM users WHERE name LIKE :name AND delete_flag = 0;');
+
+$prepare->bindValue(':name',$name,PDO::PARAM_STR);
 
 $prepare->execute();
 
-$result = $prepare->fetchALL(PDO::FETCH_ASSOC);
+$result = $prepare ->fetchALL(PDO::FETCH_ASSOC);
+         
+$books_num = count($result); // トータルデータ件数
+ 
+$max_page = ceil($books_num / $max); // トータルページ数
+
+$result = [ "now" => $now,
+            "max_page" => $max_page ];
 
 $jsonstr =  json_encode($result, JSON_UNESCAPED_UNICODE);
 
 echo $jsonstr;
-
-
 ?>
-  

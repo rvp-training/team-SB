@@ -9,7 +9,7 @@
     ];
     //POST /admin/edit API呼び出し
     $curl = curl_init();
-    curl_setopt($curl, CURLOPT_URL, "http://web/api/admin/users/edit_test.php");
+    curl_setopt($curl, CURLOPT_URL, "http://web/api/admin/users/edit/edit_test.php");
     curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'POST');
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($curl, CURLOPT_POSTFIELDS, $params); 

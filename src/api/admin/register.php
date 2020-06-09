@@ -15,12 +15,6 @@ $position = $_POST["position"];
 $mail = $_POST["mail"];
 $pass = $_POST["pass"];
 
-/*$name = 'テスト';
-$department = 'テスト部';
-$position = 'テスト部長';
-$mail = 'test.co.jp';
-$pass = 'test';*/
-
 $prepare = $dbh->prepare('INSERT INTO users ( 
     name, department, position, mail, pass ) 
     VALUES ( :name, :department, :position, :mail, :pass);');

@@ -74,10 +74,8 @@
                         }?>" required/>
                         </dd>
                 </dl>
-                <div class="center">
                     <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
-                    <input type="submit" class="button" value="更新"/>
-                </div>
+                    <input type="submit" class="button" value="更新" style="margin-left:130px;"/>
             </form>  
             </div>
         </main>

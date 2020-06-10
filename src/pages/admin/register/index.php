@@ -44,10 +44,8 @@
                     </dd>
                 </dl>
                 <input type="hidden" name="redirect" value="admin/register/confirm.php"/>
-                <div class="center">
-                    <input type="submit" class="button" value="登録"/>
-                </div>
-            </form>  
+                <input type="submit" class="button" value="登録"  style="margin-left:130px;"/>
+                </form>  
             </div>
         </main>
     </body>

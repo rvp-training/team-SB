@@ -8,7 +8,6 @@
         'pass' => $_POST['pass']
     ];
     //POST /admin/register API呼び出し
-    // echo $params;
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, "http://web/api/admin/register.php");
     curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'POST');

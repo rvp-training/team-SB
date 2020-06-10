@@ -13,10 +13,10 @@
     <main>
         
         <!--検索フォーム -->
-        <form action="http://localhost/pages/admin/search/index.php" method="GET">
-        <input class="form-text" type="search" id="name" name="name" placeholder=
+        <form action="http://localhost/pages/admin/search.php" method="GET">
+        <input class="form-text" type="search" size="30" id="name" name="name" maxlength="30" placeholder=
         <?php if (isset($_GET["name"])){
-            print $_GET["name"];
+            print htmlspecialchars($_GET["name"]);
         }else{
             print "氏名を入力";
         }?> required>
@@ -35,10 +35,11 @@
             // 最大ページ数分リンクを作成
             $max_page = $result['max_page'];
             $page = $result['now'];
+            $number = $result['number'];
         ?>
         <ul>
             <?php if ($page > 1): ?>
-                <li class="paging"><a href="./search?p=<?php print($page - 1); ?>">前へ</a></li>
+                <li class="paging"><a href="./search?name=<?php print $_GET['name'] ?>&p=<?php print($page - 1); ?>">前へ</a></li>
             <?php else: ?>
                 <li class="paging">前へ</li>
             <?php endif; ?>
@@ -47,12 +48,12 @@
                 <?php if ($i == $page): ?>
                     <li class="paging"><a><?php echo $i ?></a></li>
                 <?php else: ?>
-                    <li class="paging"><a href="./search?p=<?php print $i; ?>"><?php echo $i ?></a></li>
+                    <li class="paging"><a href="./search?name=<?php print $_GET['name'] ?>&p=<?php print $i; ?>"><?php echo $i ?></a></li>
                 <?php endif; ?>
             <?php endfor; ?>
 
-            <?php if ($page < $max_Page): ?>
-                <li class="paging"><a href="./search?p=<?php print($page + 1); ?>">次へ</a></li>
+            <?php if ($page < $max_page): ?>
+                <li class="paging"><a href="./search?name=<?php print $_GET['name'] ?>&p=<?php print($page + 1); ?>">次へ</a></li>
             <?php else: ?>
                 <li class="paging">次へ</li>
             <?php endif; ?>
@@ -66,7 +67,7 @@
                 $result = json_decode($response, true);
         ?>
         <br>
-        <a>検索結果は<?php print count($result);?>件です</a>
+        <a>検索結果は<?php print $number;?>件です</a>
         <br>
        <!-- 検索結果出力テーブル　-->
         <table>
@@ -83,16 +84,16 @@
             <?php foreach ($result as $key => $value) : ?>
                 <tr>
                     <td>
-                        <?php print $result[$key]["name"];?> 
+                        <?php print htmlspecialchars($result[$key]["name"]);?> 
                     </td>
                     <td>
-                        <?php print $result[$key]["department"];?> 
+                        <?php print htmlspecialchars($result[$key]["department"]);?> 
                     </td>
                     <td>
-                        <?php print $result[$key]["position"];?> 
+                        <?php print htmlspecialchars($result[$key]["position"]);?> 
                     </td>
                     <td>
-                        <?php print $result[$key]["mail"];?> 
+                        <?php print htmlspecialchars($result[$key]["mail"]);?> 
                     </td>
                     <td>
                         <button onclick="location.href='http://localhost/pages/admin/edit?id=<?php print $result[$key]['id'] ?>'" class="edit_button">編集</button>

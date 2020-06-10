@@ -11,7 +11,7 @@
                 <label for="mail" class="login_text">メールアドレス</label>
                 <p><input class="form-text" type="email" name="mail" maxlength="45" placeholder=
                 "<?php if (isset($_POST["mail"])){
-                    print $_POST["mail"];
+                    print htmlspecialchars($_POST["mail"]);
                 } else {
                     print "メールアドレスを入力してください";
                 }?>" title="メールアドレスは英数字または記号で入力してください" required></p>

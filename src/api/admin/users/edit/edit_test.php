@@ -22,14 +22,20 @@ $prepare = $dbh->prepare(
     pass = :pass
     WHERE id = :id;');
 
-$prepare->bindValue(':name',(string)$name,PDO::PARAM_STR);
-$prepare->bindValue(':department',(string)$department,PDO::PARAM_STR);
-$prepare->bindValue(':position',(string)$position,PDO::PARAM_STR);
-$prepare->bindValue(':mail',(string)$mail,PDO::PARAM_STR);
-$prepare->bindValue(':pass',(string)$pass,PDO::PARAM_STR);
-$prepare->bindValue(':id',(int)$id,PDO::PARAM_INT);
+$prepare->bindValue(':name',$name,PDO::PARAM_STR);
+$prepare->bindValue(':department',$department,PDO::PARAM_STR);
+$prepare->bindValue(':position',$position,PDO::PARAM_STR);
+$prepare->bindValue(':mail',$mail,PDO::PARAM_STR);
+$prepare->bindValue(':pass',$pass,PDO::PARAM_STR);
+$prepare->bindValue(':id',$id,PDO::PARAM_INT);
 $prepare->execute();
+$result = $prepare->rowCount();
+
+if($result === 1){
 echo "変更完了しました";
+} else {
+    echo "変更に失敗しました";
+}
 ?>
 
 

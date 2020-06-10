@@ -9,6 +9,7 @@ try{
 }
 
 //変数にDBからとってきたデータを配列として格納
+
 $name = $_POST["name"];
 $department = $_POST["department"];
 $position = $_POST["position"];
@@ -19,13 +20,20 @@ $prepare = $dbh->prepare('INSERT INTO users (
     name, department, position, mail, pass ) 
     VALUES ( :name, :department, :position, :mail, :pass);');
 
-$prepare->bindValue(':name',(string)$name,PDO::PARAM_STR);
-$prepare->bindValue(':department',(string)$department,PDO::PARAM_STR);
-$prepare->bindValue(':position',(string)$position,PDO::PARAM_STR);
-$prepare->bindValue(':mail',(string)$mail,PDO::PARAM_STR);
-$prepare->bindValue(':pass',(string)$pass,PDO::PARAM_STR);
+$prepare->bindValue(':name',$name,PDO::PARAM_STR);
+$prepare->bindValue(':department',$department,PDO::PARAM_STR);
+$prepare->bindValue(':position',$position,PDO::PARAM_STR);
+$prepare->bindValue(':mail',$mail,PDO::PARAM_STR);
+$prepare->bindValue(':pass',$pass,PDO::PARAM_STR);
 
 $prepare->execute();
 
+$result = $prepare->rowCount();
+
+if($result === 1){
 echo "登録完了しました";
+} else {
+    echo "登録に失敗しました";
+}
+
 ?>

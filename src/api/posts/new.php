@@ -69,5 +69,3 @@ if(!$res){
     header('Location: http://localhost/pages/posts?category='.$category_id);
 }
 ?>
-
-$prepare->bindValue(':name',$name,PDO::PARAM_STR);

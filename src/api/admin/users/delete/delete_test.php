@@ -13,15 +13,19 @@ try{
 $id = $_GET["id"];
 
 
-//$id = 3;
-
 $prepare = $dbh->prepare(
     'UPDATE users SET 
     delete_flag = 1
     WHERE id = :id;');
 
-$prepare->bindValue(':id',(int)$id,PDO::PARAM_INT);
+$prepare->bindValue(':id',$id,PDO::PARAM_INT);
 
 $prepare->execute();
 
+$result = $prepare->rowCount();
+
+if($result === 1){
 echo "変更完了しました";
+} else {
+    echo "登録に失敗しました";
+}

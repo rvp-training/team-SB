@@ -16,7 +16,7 @@ $id = $_GET["id"] ;
 
 $prepare = $dbh->prepare('SELECT * FROM users WHERE id = :id;');
 
-$prepare->bindValue(':id',(int)$id,PDO::PARAM_INT);
+$prepare->bindValue(':id',$id,PDO::PARAM_INT);
 
 $prepare->execute();
 

@@ -27,8 +27,8 @@ $name = '%'.$name.'%';
 $prepare = $dbh->prepare('SELECT * FROM users WHERE name LIKE :name AND delete_flag = 0 LIMIT :max_p OFFSET :start_no;');
 
 $prepare->bindValue(':name',$name,PDO::PARAM_STR);
-$prepare->bindValue(':max_p',(int)$max,PDO::PARAM_INT);
-$prepare->bindValue(':start_no',(int)$start_no,PDO::PARAM_INT);
+$prepare->bindValue(':max_p',$max,PDO::PARAM_INT);
+$prepare->bindValue(':start_no',$start_no,PDO::PARAM_INT);
 
 
 $prepare->execute();

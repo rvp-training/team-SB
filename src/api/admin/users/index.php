@@ -21,8 +21,8 @@ $start_no = ($now - 1) * $max; // 配列の何番目から取得すればよい�
 
 $prepare = $dbh->prepare('SELECT * FROM users WHERE delete_flag = 0 LIMIT :max_p OFFSET :start_no;');
 
-$prepare->bindValue(':max_p',(int)$max,PDO::PARAM_INT);
-$prepare->bindValue(':start_no',(int)$start_no,PDO::PARAM_INT);
+$prepare->bindValue(':max_p',$max,PDO::PARAM_INT);
+$prepare->bindValue(':start_no',$start_no,PDO::PARAM_INT);
 
 $prepare->execute();
 

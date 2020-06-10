@@ -24,18 +24,46 @@
         ?>
         <div class=image_wrapper>
             <ul class="pictures_l">    
-                <li class="picture_l active"><img src="../../../images/<?php echo $main["image_1"]; ?>"></li>
-                <li class="picture_l"><img src="../../../images/<?php echo $main["image_2"]; ?>" alt="image not found"></li>
-                <li class="picture_l"><img src="../../../images/<?php echo $main["image_3"]; ?>" alt="image not found"></li>
-                <li class="picture_l"><img src="../../../images/<?php echo $main["image_4"]; ?>" alt="image not found"></li>
-                <li class="picture_l"><img src="../../../images/<?php echo $main["image_5"]; ?>" alt="image not found"></li>
+                <li class="picture_l active">
+                    <?php if( $main["image_1"] != NULL): ?>
+                        <img src="../../../images/<?php echo $main["image_1"]; ?>" alt="image not found"></li>
+                    <?php else: ?>
+                        <img src="../../../images/<?php echo"noimage.png"; ?>" alt="image not found"></li>
+                    <?php endif; ?> 
+                <li class="picture_l">
+                    <?php if( $main["image_2"] != NULL): ?>
+                        <img src="../../../images/<?php echo $main["image_2"]; ?>" alt="image not found"></li>
+                    <?php else: ?>
+                        <img src="../../../images/<?php echo"noimage.png"; ?>" alt="image not found"></li>
+                    <?php endif; ?>
+                <li class="picture_l">
+                    <?php if( $main["image_3"] != NULL): ?>
+                        <img src="../../../images/<?php echo $main["image_3"]; ?>" alt="image not found"></li>
+                    <?php else: ?>
+                        <img src="../../../images/<?php echo"noimage.png"; ?>" alt="image not found"></li>
+                    <?php endif; ?>
+                <li class="picture_l">
+                    <?php if( $main["image_4"] != NULL): ?>
+                        <img src="../../../images/<?php echo $main["image_4"]; ?>" alt="image not found"></li>
+                    <?php else: ?>
+                        <img src="../../../images/<?php echo"noimage.png"; ?>" alt="image not found"></li>
+                    <?php endif; ?>
+                <li class="picture_l">
+                    <?php if( $main["image_5"] != NULL): ?>
+                        <img src="../../../images/<?php echo $main["image_5"]; ?>" alt="image not found"></li>
+                    <?php else: ?>
+                        <img src="../../../images/<?php echo"noimage.png"; ?>" alt="image not found"></li>
+                    <?php endif; ?>
             </ul>
             <ul class="pictures_s">
-                <li class="picture_s"><img src="../../../images/<?php echo $main["image_1"]; ?>" id="image_1" alt="image not found"></li>
-                <li class="picture_s"><img src="../../../images/<?php echo $main["image_2"]; ?>" id="image_2" alt="image not found"></li>
-                <li class="picture_s"><img src="../../../images/<?php echo $main["image_3"]; ?>" id="image_3" alt="image not found"></li>
-                <li class="picture_s"><img src="../../../images/<?php echo $main["image_4"]; ?>" id="image_4" alt="image not found"></li>
-                <li class="picture_s"><img src="../../../images/<?php echo $main["image_5"]; ?>" id="image_5" alt="image not found"></li>
+                <?php for( $i=1; $i<=5; $i++ ) : ?>
+                    <li class="picture_s">
+                    <?php if( $main["image_$i"] != NULL): ?>
+                        <img src="../../../images/<?php echo $main["image_$i"]; ?>" id="image_<?php echo $i; ?>" alt="image not found"></li>
+                    <?php else: ?>
+                        <img src="../../../images/<?php echo"noimage.png"; ?>" id="image_<?php echo $i; ?>" alt="image not found"></li>
+                    <?php endif; ?>
+                <?php endfor ?>
             </ul>
         </div>
         <div>

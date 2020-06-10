@@ -76,23 +76,27 @@
 }
 
 
-.register_button {
+#post_new_button {
     position: absolute;
     width: 60px;
     height: 20px;
     right: 27px;
     top: 10px;
-    font-family: Noto Sans JP;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
     display: flex;
     align-items: center;
     text-align: left;
     padding: 10px 10px;
-    color: #1F0F83;
     background-color: #ffffff;
     border-radius: 6px;
+}
+
+#post_new_button a{
+    font-family: Noto Sans JP;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    color: #1F0F83;
+    text-decoration: none;
 }
 
 .sidebar {

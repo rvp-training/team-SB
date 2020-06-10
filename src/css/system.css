@@ -11,9 +11,20 @@
 }
 
 #login_box {
-    height: 100vh;
+    width: 500px;
+    height: 300px;
+    margin: 0;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
 }
+
+
 
 .login_text {
     font-family: Noto Sans JP;
@@ -76,23 +87,27 @@
 }
 
 
-.register_button {
+.post_new_button {
     position: absolute;
     width: 60px;
     height: 20px;
     right: 27px;
     top: 10px;
-    font-family: Noto Sans JP;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
     display: flex;
     align-items: center;
     text-align: left;
     padding: 10px 10px;
-    color: #1F0F83;
     background-color: #ffffff;
     border-radius: 6px;
+}
+
+.post_new_button a{
+    font-family: Noto Sans JP;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    color: #1F0F83;
+    text-decoration: none;
 }
 
 .sidebar {
@@ -145,7 +160,15 @@ main {
     width: 400px;
 }
 
-.post_button {
+
+.paging{
+    list-style: none;
+    display: inline-block;
+    padding: 3px;
+    margin-top: 30px;
+}
+
+.post_button{
     font-family: Noto Sans JP;
     font-style: normal;
     font-size: 14px;
@@ -153,6 +176,6 @@ main {
     width: 100px;
     height: 30px;
     border: 2px;
-    background-color: #1F0F83;;
+    background-color: #1F0F83;
     border-radius: 7px;
-}  
+  }

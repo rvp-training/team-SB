@@ -1,4 +1,4 @@
-
+<?php session_start() ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,11 +15,11 @@
         <!--検索フォーム -->
         <form action="http://localhost/pages/admin/search.php" method="GET">
         <input class="form-text" type="search" size="30" id="name" name="name" maxlength="30" placeholder=
-        <?php if (isset($_GET["name"])){
+        "<?php if (isset($_GET["name"])){
             print htmlspecialchars($_GET["name"]);
         }else{
             print "氏名を入力";
-        }?> required>
+        }?>" required>
         <input type="submit" value="検索">
         </form>
         <?php

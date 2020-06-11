@@ -16,7 +16,7 @@
                     print "メールアドレスを入力してください";
                 }?>" title="メールアドレスは英数字または記号で入力してください" required></p>
                 <label for="pass" class="login_text">パスワード</label>
-                <p><input class="form-text" type="text" name="pass" minlength="8" maxlength="45" pattern="^[a-zA-Z0-9-_]+$" placeholder="パスワードを入力してください"></p>
+                <p><input class="form-text" type="text" name="pass" minlength="8" maxlength="45" pattern="^[a-zA-Z0-9-_]+$" placeholder="パスワードを入力してください" required></p>
                 <p><input id="login_button_admin" type="submit" value="ログイン"></p>
             </form>
             <p>(一般ユーザーの方は<a href="http://localhost/pages/login">こちら</a>)</p>

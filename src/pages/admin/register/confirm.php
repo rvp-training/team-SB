@@ -51,7 +51,7 @@
                         <input type="hidden" name="mail" value="<?php echo htmlspecialchars($_POST['mail'] )?>">
                         <input type="hidden" name="pass" value="<?php echo htmlspecialchars($_POST['pass'] )?>">
                     </form>
-                    <form action="http://localhost/pages/admin/register/finish.php" method="post" enctype="multipart/form-data">
+                    <form action="http://localhost/pages/admin/register/complete.php" method="post" enctype="multipart/form-data">
                         <input type="submit" class="button" value="登録" />
                         <input type="hidden" name="name" value="<?php echo htmlspecialchars($_POST['name'] )?>">
                         <input type="hidden" name="department" value="<?php echo htmlspecialchars($_POST['department'] )?>">

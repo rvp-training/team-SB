@@ -31,10 +31,13 @@
             // 最大ページ数分リンクを作成
             $max_page = $result['max_page'];
             $page = $result['now'];
+            $number = $result['number'];//追加（件数）
         ?>
         <ul>
+
+        <!-- &pの前に&tag=<#?php print $_GET['tag'] ?>を追加 -->
             <?php if ($page > 1): ?>
-                <li class="paging"><a href="./search?category=<?php print $_GET['category'] ?>&p=<?php print($page - 1); ?>">前へ</a></li>
+                <li class="paging"><a href="./search?category=<?php print $_GET['category'] ?>&tag=<?php print $_GET['tag'] ?>&p=<?php print($page - 1); ?>">前へ</a></li>
             <?php else: ?>
                 <li class="paging">前へ</li>
             <?php endif; ?>
@@ -43,12 +46,12 @@
                 <?php if ($i == $page): ?>
                     <li class="paging"><a><?php echo $i ?></a></li>
                 <?php else: ?>
-                    <li class="paging"><a href="./search?category=<?php print $_GET['category'] ?>&p=<?php print $i; ?>"><?php echo $i ?></a></li>
+                    <li class="paging"><a href="./search?category=<?php print $_GET['category'] ?>&tag=<?php print $_GET['tag'] ?>&p=<?php print $i; ?>"><?php echo $i ?></a></li>
                 <?php endif; ?>
             <?php endfor; ?>
-
-            <?php if ($page < $max_Page): ?>
-                <li class="paging"><a href="./search?category=<?php print $_GET['category'] ?>&p=<?php print($page + 1); ?>">次のページへ</a></li>
+　　　　　　<!--次へが押せない $max_Page->$max_pageに変更 -->
+            <?php if ($page < $max_page): ?>
+                <li class="paging"><a href="./search?category=<?php print $_GET['category'] ?>&tag=<?php print $_GET['tag'] ?>&p=<?php print($page + 1); ?>">次へ</a></li>
             <?php else: ?>
                 <li class="paging">次へ</li>
             <?php endif; ?>
@@ -64,7 +67,8 @@
         ?> 
 
         <br>
-        <a>検索結果は<?php print count($result);?>件です</a>
+        <!--件数取得が間違っていたので count($result)から$numberに変更 -->
+        <a>検索結果は<?php print $number;?>件です</a> 
         <br>
         <div id="thumbnail">
             <?php foreach ( $result as $key => $value ) : ?>

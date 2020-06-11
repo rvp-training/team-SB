@@ -4,8 +4,8 @@ try{
 
     $sql = "CREATE TABLE comments (
         id serial PRIMARY KEY NOT NULL,
-        post_id int REFERENCES posts(id),
-        user_id int REFERENCES users(id),
+        post_id int REFERENCES posts(id) NOT NULL,
+        user_id int REFERENCES users(id) NOT NULL,
         content varchar(255) NOT NULL,
         time timestamp NOT NULL
     )";

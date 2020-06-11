@@ -66,3 +66,7 @@
     text-align: center;
     align-self: center;
 }
+
+a:target {
+    color: #EE3B2C;
+  }

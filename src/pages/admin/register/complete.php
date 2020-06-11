@@ -16,9 +16,9 @@
     $result = json_decode($response, true);
     if ($response === "登録完了しました"){
         $_SESSION['message'] = "新規登録に成功しました";
-        header('Location: http://localhost/pages/admin/index.php');
+        header('Location: http://localhost/pages/admin/index#top');
     } else {
         $_SESSION['message'] = "新規登録に失敗しました";
-        header('Location: http://localhost/pages/admin/index.php');
+        header('Location: http://localhost/pages/admin/index#top');
     }
 ?>

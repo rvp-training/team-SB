@@ -1,4 +1,4 @@
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,16 +35,16 @@
                 <?php foreach ($result as $key => $value) : ?>
                 <tr>
                     <td>
-                        <?php print $result[$key]["name"];?> 
+                        <?php print htmlspecialchars($result[$key]["name"]);?> 
                     </td>
                     <td>
-                        <?php print $result[$key]["department"];?> 
+                        <?php print htmlspecialchars($result[$key]["department"]);?> 
                     </td>
                     <td>
-                        <?php print $result[$key]["position"];?> 
+                        <?php print htmlspecialchars($result[$key]["position"]);?> 
                     </td>
                     <td>
-                        <?php print $result[$key]["mail"];?> 
+                        <?php print htmlspecialchars($result[$key]["mail"]);?> 
                     </td>
                 </tr>
             <?php endforeach; ?>

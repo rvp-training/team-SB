@@ -47,7 +47,7 @@
                     <?php endif; ?>
                 <?php endfor; ?>
 
-                <?php if ($page < $max_Page): ?>
+                <?php if ($page < $max_page): ?>
                     <li class="paging"><a href="./?category=<?php print $_GET['category'] ?>&p=<?php print($page + 1); ?>">次へ</a></li>
                 <?php else: ?>
                     <li class="paging">次へ</li>

@@ -2,9 +2,9 @@
 <div class="sidebar">
     <div class="sidebar_items">
         <ul>
-            <li class="sidebar_item"><a class="sidebar_link top" href="http://localhost/pages/admin/index.php">トップ</a></li>
-            <li class="sidebar_item"><a class="sidebar_link users" href="http://localhost/pages/admin/users.php">ユーザー一覧</a></li>
-            <li class="sidebar_item"><a class="sidebar_link register" href="http://localhost/pages/admin/register/index.php">新規登録</a></li>
+            <li class="sidebar_item"><a id="top" class="sidebar_link" href="http://localhost/pages/admin/index#top">トップ</a></li>
+            <li class="sidebar_item"><a id="users" class="sidebar_link" href="http://localhost/pages/admin/users#users">ユーザー一覧</a></li>
+            <li class="sidebar_item"><a id="register" class="sidebar_link" href="http://localhost/pages/admin/register/index#register">新規登録</a></li>
         </ul>
         <div class="sidebar_item sidebar_item_fixed">
             <a class="sidebar_link" href="http://localhost/logout/index.php">ログアウト</a>

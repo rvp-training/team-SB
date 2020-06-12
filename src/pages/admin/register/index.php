@@ -14,7 +14,7 @@
                 <p class="register-index-title">ユーザーの新規登録</p>
 
                 <!-- multipart: フォームにファイルを送信する機能がある場合に指定する -->
-                <form action="http://localhost/pages/admin/register/confirm.php" method="post" enctype="multipart/form-data">
+                <form action="http://localhost/pages/admin/register/confirm#register" method="post" enctype="multipart/form-data">
                     <dl>
                         <dt class="register-index-content">氏名</dt>
                         <dd>
@@ -42,7 +42,7 @@
                             
                         </dd>
                     </dl>
-                    <input type="hidden" name="redirect" value="admin/register/confirm.php"/>
+                    <input type="hidden" name="redirect" value="admin/register/confirm#register"/>
                     <input type="submit" class="button" value="登録"  style="margin-left:130px;"/>
                 </form>  
             </div>

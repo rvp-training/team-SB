@@ -68,5 +68,5 @@
 }
 
 a:target {
-    color: #EE3B2C;
+    color: #EE3B2C !important;
   }

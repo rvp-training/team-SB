@@ -66,6 +66,6 @@ if(!$res){
     echo "\n";
     var_dump($preparecontent->errorInfo());
 }else{
-    header('Location: http://localhost/pages/posts?category='.$category_id);
+    header('Location: http://localhost/pages/posts?category='.$category_id.'#'.$category_id);
 }
 ?>

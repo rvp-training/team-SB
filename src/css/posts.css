@@ -44,3 +44,7 @@
     color: #ffffff;
     text-align: center;
 }   
+
+a:target {
+    color: #1F0F83 !important; 
+  }

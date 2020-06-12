@@ -37,7 +37,7 @@ if ($_POST['pass'] == $row['pass']) {
   session_regenerate_id(true); //session_idを新しく生成し、置き換える
 
   $_SESSION['user_id'] = $row['id'];
-  header('Location: http://localhost/pages/admin');
+  header('Location: http://localhost/pages/admin#top');
 
 } else {
   header('Location: http://localhost/pages/login/admin');

@@ -13,8 +13,9 @@ session_start();
 
 //メールアドレスの方が適正かどうか確認
 if (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
-  echo '入力された値が不正です。';
-  return false;
+  $_SESSION['mail'] = $_POST['mail'];
+  $_SESSION['login_message'] = '正しいメールアドレスを入力してください';
+  header('Location: ../pages/login/admin');
 }
 
 //DB内でPOSTされたメールアドレスを検索
@@ -26,9 +27,9 @@ if (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
 
 //emailがDB内に存在しているか確認
 if (!isset($row['mail'])) {
-  echo 'メールアドレス又はパスワードが間違っています。';
-  return false;
-
+  $_SESSION['mail'] = $_POST['mail'];
+  $_SESSION['login_message'] = 'メールアドレス又はパスワードが間違っています。';
+  header('Location: ../pages/login/admin');
 }
 
 
@@ -37,9 +38,11 @@ if ($_POST['pass'] == $row['pass']) {
   session_regenerate_id(true); //session_idを新しく生成し、置き換える
 
   $_SESSION['user_id'] = $row['id'];
-  header('Location: http://localhost/pages/admin#top');
+  header('Location: ../pages/admin#top');
 
 } else {
-  header('Location: http://localhost/pages/login/admin');
+  $_SESSION['mail'] = $_POST['mail'];
+  $_SESSION['login_message'] = 'メールアドレス又はパスワードが間違っています。';
+  header('Location: ../pages/login/admin');
 }
 ?>

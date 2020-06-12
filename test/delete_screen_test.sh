@@ -1,0 +1,1 @@
+curl http://localhost/api/admin/users/delete/delete_screen_test.php?id=2

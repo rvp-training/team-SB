@@ -1,0 +1,1 @@
+curl "http://localhost/api/admin/users/search/?name=%E5%89%8A%E9%99%A4%E6%B8%88%E3%81%BF"

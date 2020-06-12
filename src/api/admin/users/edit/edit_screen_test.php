@@ -14,7 +14,7 @@ try{
 
 $id = $_GET["id"] ;
 
-$prepare = $dbh->prepare('SELECT * FROM users WHERE id = :id;');
+$prepare = $dbh->prepare('SELECT * FROM users WHERE id = :id AND delete_flag = 0;');
 
 $prepare->bindValue(':id',$id,PDO::PARAM_INT);
 

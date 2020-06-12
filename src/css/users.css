@@ -22,6 +22,10 @@
   vertical-align: middle;
 }
 
+a:target {
+  color: #EE3B2C !important;
+}
+
 /*users*/   
 table{
   border-collapse: collapse;

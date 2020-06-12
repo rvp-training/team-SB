@@ -17,9 +17,9 @@
     $result = json_decode($response, true);
     if ($response === "変更完了しました"){
         $_SESSION['message'] = "更新に成功しました";
-        header('Location: http://localhost/pages/admin/index.php');
+        header('Location: http://localhost/pages/admin/index#top');
     } else {
         $_SESSION['message'] = "更新に失敗しました";
-        header('Location: http://localhost/pages/admin/index.php');
+        header('Location: http://localhost/pages/admin/index#top');
     }
 ?>

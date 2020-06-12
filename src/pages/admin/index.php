@@ -16,9 +16,9 @@
         <?php unset( $_SESSION['message'] );?>
     <?php endif; ?>
         <div id="container">
-            <div id="itemA"><button onclick="location.href='http://localhost/pages/admin/users'" class="menu">ユーザー一覧</button></div>
+            <div id="itemA"><button onclick="location.href='http://localhost/pages/admin/users#users'" class="menu">ユーザー一覧</button></div>
             <div id="itemB"><a class="text">ユーザー情報を確認・編集・削除します</a></div>
-            <div id="itemC"><button onclick="location.href='http://localhost/pages/admin/register'" class="menu">新規登録</button></div>
+            <div id="itemC"><button onclick="location.href='http://localhost/pages/admin/register#register'" class="menu">新規登録</button></div>
             <div id="itemD"><a class="text">新規ユーザー情報を登録します</a></div>
         </div>
     </main>

@@ -1,0 +1,1 @@
+curl "http://localhost/logout/index.php"

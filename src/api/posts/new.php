@@ -36,8 +36,8 @@ if (isset($_POST['upload'])) {
 $image_id = $result["id"];
 //posgtsテーブルのimage_idへimageテーブルのidを挿入
 
-
-$user_id = $_SESSION['user_id'];
+$user_id = 1;
+// $user_id = $_SESSION['user_id'];
 
 //postsテーブルのusers_idへログイン中のuserのidを代入
 // $user_id = 1;
@@ -51,9 +51,9 @@ $preparecontent = $db->prepare('INSERT INTO posts (
     title, text, tag, image_id, user_id, category_id ,time) 
     VALUES ( :title, :text, :tag, :image_id, :user_id, :category_id, now());');
 
-$preparecontent->bindValue(':title',(string)$title,PDO::PARAM_STR);
-$preparecontent->bindValue(':text',(string)$text,PDO::PARAM_STR);
-$preparecontent->bindValue(':tag',(string)$tag,PDO::PARAM_STR);
+$preparecontent->bindValue(':title',$title,PDO::PARAM_STR);
+$preparecontent->bindValue(':text',$text,PDO::PARAM_STR);
+$preparecontent->bindValue(':tag',$tag,PDO::PARAM_STR);
 $preparecontent->bindValue(':image_id',$image_id,PDO::PARAM_INT);
 $preparecontent->bindValue(':user_id',$user_id,PDO::PARAM_INT);
 $preparecontent->bindValue(':category_id',$category_id,PDO::PARAM_INT);

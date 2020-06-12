@@ -22,7 +22,7 @@ $prepare->bindValue(':post_id',(int)$post_id,PDO::PARAM_INT);
 $prepare->bindValue(':user_id',(int)$user_id,PDO::PARAM_INT);
 $prepare->bindValue(':content',$content,PDO::PARAM_STR);
 
-$prepare->execute();
+$res = $prepare->execute();
 
 if(!$res){
     echo "コメント投稿に失敗しました！";

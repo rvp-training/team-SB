@@ -8,8 +8,8 @@ try{
         title varchar(255) NOT NULL,
         text varchar(255),
         tag varchar(255),
-        image_id int,
-        category_id int REFERENCES categories(id),
+        image_id int NOT NULL,
+        category_id int REFERENCES categories(id) NOT NULL,
         time timestamp NOT NULL
      )";
     $res = $db->query($sql);

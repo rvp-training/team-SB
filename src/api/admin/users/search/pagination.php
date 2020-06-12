@@ -34,7 +34,8 @@ $books_num = count($result); // トータルデータ件数
 $max_page = ceil($books_num / $max); // トータルページ数
 
 $result = [ "now" => $now,
-            "max_page" => $max_page ];
+            "max_page" => $max_page,
+            "number" => $books_num ];
 
 $jsonstr =  json_encode($result, JSON_UNESCAPED_UNICODE);
 

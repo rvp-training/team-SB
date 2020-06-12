@@ -22,6 +22,10 @@
   vertical-align: middle;
 }
 
+a:target {
+  color: #EE3B2C !important;
+}
+
 /*users*/   
 table{
   border-collapse: collapse;
@@ -52,6 +56,7 @@ table td {
   padding: 7px 0;
   width: 200px;
   border:solid 1px #ddd;
+  overflow-wrap : break-word;
 }
 
 .edit_button {

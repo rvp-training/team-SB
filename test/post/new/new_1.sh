@@ -6,8 +6,11 @@ set -u
 curl http://localhost/api/posts/new \
     -X POST \
     -H 'Content-Type:multipart/form-data' \
-    -F 'image[]=@./images/5edf4b97db18d.jpeg' \
-    -F 'image[]=@./images/5edf4b97db18d.jpeg' \
+    -F 'image[]=@./images/5edf2e2896e29.jpeg' \
+    -F 'image[]=@./images/5edf2e2896e29.jpeg' \
+    -F 'image[]=@./images/5edf2e2896e29.jpeg' \
+    -F 'image[]=@./images/5edf2e2896e29.jpeg' \
+    -F 'image[]=@./images/5edf2e2896e29.jpeg' \
     -F 'upload=Upload' \
     -F 'title=Title' \
     -F 'text=Text' \

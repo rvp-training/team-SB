@@ -21,7 +21,6 @@ $prepare = $dbh->prepare(
     mail = :mail,
     pass = :pass
     WHERE id = :id;');
-
 $prepare->bindValue(':name',$name,PDO::PARAM_STR);
 $prepare->bindValue(':department',$department,PDO::PARAM_STR);
 $prepare->bindValue(':position',$position,PDO::PARAM_STR);

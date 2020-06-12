@@ -1,0 +1,1 @@
+curl http://localhost/api/admin/users/delete/delete_test.php?id=1

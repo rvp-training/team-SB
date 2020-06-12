@@ -1,0 +1,1 @@
+curl "http://localhost/api/admin/users/edit/edit_screen_test.php/?id=1"

@@ -40,6 +40,7 @@ if ($_POST['pass'] == $row['pass']) {
   session_regenerate_id(true); //session_idを新しく生成し、置き換える
   
   $_SESSION['user_id'] = $row['id'];
+  $_SESSION['admin_flag'] = $row['admin_flag'];
   header('Location: ../pages/admin#top');
 
 } else {

@@ -1,4 +1,12 @@
-<?php session_start() ?>
+<?php
+session_start();
+if(isset($_SESSION['user_id']) && $_SESSION['admin_flag']===1){
+
+}else{
+    header('Location: ../login');
+          exit;
+        }
+        ?>
 <!DOCTYPE html>
 <html>
 <head>

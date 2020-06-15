@@ -11,5 +11,6 @@ curl -s http://localhost/db/create_tables/category_default.php
 curl -s http://localhost/db/create_tables/posts.php
 curl -s http://localhost/db/create_tables/images.php
 curl -s http://localhost/db/create_tables/comments.php
+curl -s http://localhost/db/create_tables/user_testdata_posts.php
 
 

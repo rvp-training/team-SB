@@ -33,9 +33,6 @@ if ($_POST['pass'] == $row['pass']) {
     session_regenerate_id(true); //session_idを新しく生成し、置き換える
     $_SESSION['user_id'] = $row['id'];
     header('Location: ../pages/posts/?category=1');
-
 } else {
-    header('Location: ../pages/login');
-
-}
+    header('    Location: ../pages/login');}
 ?>

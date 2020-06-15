@@ -1,12 +1,11 @@
 <?php
-session_start();
-if(isset($_SESSION['user_id']) && $_SESSION['admin_flag']===1){
+    session_start();
 
-}else{
-    header('Location: ../../login');
-          exit;
-        }
-        ?>
+    // if (!isset($_SESSION['edit'])){
+    //     header('Location: index.php');
+    //     exit();
+    // }       
+?>
 
 <!DOCTYPE html>
 <html>
@@ -48,7 +47,7 @@ if(isset($_SESSION['user_id']) && $_SESSION['admin_flag']===1){
             </table>
             <div class="center">
                 <div class="flex">
-                <form action="http://localhost/pages/admin/edit/index.php" method="post" enctype="multipart/form-data">
+                <form action="http://localhost/pages/admin/edit?id=<?php echo htmlspecialchars ( $_POST['id'] )?>" method="post" enctype="multipart/form-data">
                     <input type="submit" class="button" value="戻る" />
                     <input type="hidden" name="name" value="<?php echo htmlspecialchars ($_POST['name']) ?>">
                     <input type="hidden" name="department" value="<?php echo htmlspecialchars ( $_POST['department']) ?>">

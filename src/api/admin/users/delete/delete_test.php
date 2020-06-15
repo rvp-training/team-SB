@@ -27,5 +27,5 @@ $result = $prepare->rowCount();
 if($result === 1){
 echo "変更完了しました";
 } else {
-    echo "登録に失敗しました";
+    echo "変更に失敗しました";
 }

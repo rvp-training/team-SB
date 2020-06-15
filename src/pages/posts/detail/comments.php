@@ -14,8 +14,8 @@ curl_setopt($curl, CURLOPT_POSTFIELDS, $params);
 $response = curl_exec($curl);
 $result = json_decode($response, true);
 if ($response === "コメント投稿に成功しました"){
-    header('Location: http://localhost/pages/posts/detail?id='.$_POST["post_id"]);
+    header('Location: ./index?id='.$_POST["post_id"]);
 } else {
-    header('Location: http://localhost/pages/posts/detail?id='.$_POST["post_id"]);
+    header('Location: ./index?id='.$_POST["post_id"]);
 }
 ?>

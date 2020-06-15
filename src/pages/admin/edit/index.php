@@ -71,7 +71,8 @@
                             echo $_POST['pass'];
                         } else {
                         echo (htmlspecialchars($result[0]['pass'], ENT_QUOTES));
-                        }?>" required/>
+                        }?>" pattern="^[a-zA-Z0-9-_]+$" required/>
+                        <!-- patternを追加 -->
                         </dd>
                 </dl>
                     <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">

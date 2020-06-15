@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php session_start(); 
+        if(isset($_SESSION['user_id']) && $_SESSION['admin_flag'] === 0){
+        } else {
+            header('Location: ../login');
+            exit;
+        } ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +17,7 @@
     <?php include('../../components/posts/sidebar.php'); ?>
     <main>
         <!--検索フォーム -->
-        <form action="http://localhost/pages/posts/search.php" method="GET">
+        <form action="http://localhost/pages/posts/search#<?php echo $_GET['category'] ?>" method="GET">
         <input class="form-text" type="search" id="tag" name="tag" placeholder="タグを入れて検索" required>
         <input type="hidden" name="category" value="<?php echo $_GET['category'] ?>">
         <input type="submit" value="検索">
@@ -34,7 +39,7 @@
         ?>
         <ul>
             <?php if ($page > 1): ?>
-                <li class="paging"><a href="./search?category=<?php print $_GET['category'] ?>&p=<?php print($page - 1); ?>">前へ</a></li>
+                <li class="paging"><a href="./search?category=<?php print $_GET['category'] ?>&p=<?php print($page - 1); ?>#<?php echo $_GET['category'] ?>">前へ</a></li>
             <?php else: ?>
                 <li class="paging">前へ</li>
             <?php endif; ?>
@@ -43,12 +48,12 @@
                 <?php if ($i == $page): ?>
                     <li class="paging"><a><?php echo $i ?></a></li>
                 <?php else: ?>
-                    <li class="paging"><a href="./search?category=<?php print $_GET['category'] ?>&p=<?php print $i; ?>"><?php echo $i ?></a></li>
+                    <li class="paging"><a href="./search?category=<?php print $_GET['category'] ?>&p=<?php print $i; ?>#<?php echo $_GET['category'] ?>"><?php echo $i ?></a></li>
                 <?php endif; ?>
             <?php endfor; ?>
 
             <?php if ($page < $max_Page): ?>
-                <li class="paging"><a href="./search?category=<?php print $_GET['category'] ?>&p=<?php print($page + 1); ?>">次のページへ</a></li>
+                <li class="paging"><a href="./search?category=<?php print $_GET['category'] ?>&p=<?php print($page + 1); ?>#<?php echo $_GET['category'] ?>">次のページへ</a></li>
             <?php else: ?>
                 <li class="paging">次へ</li>
             <?php endif; ?>

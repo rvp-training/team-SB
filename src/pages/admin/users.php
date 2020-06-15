@@ -12,7 +12,7 @@
     <?php include('../../components/admin/sidebar.php'); ?>
     <main>
         <!--検索フォーム -->
-        <form action="http://localhost/pages/admin/search.php" method="GET">
+        <form action="http://localhost/pages/admin/search#users" method="GET">
         <input class="form-text" type="search" name="name" id="name" size="30" maxlength="30" placeholder="氏名を入力" required>
         <input type="submit" value="検索">
         </form>
@@ -32,7 +32,7 @@
         ?>
         <ul>
             <?php if ($page > 1): ?>
-                <li class="paging"><a href="./users?p=<?php print($page - 1); ?>">前へ</a></li>
+                <li class="paging"><a href="./users?p=<?php print($page - 1); ?>#users">前へ</a></li>
             <?php else: ?>
                 <li class="paging">前へ</li>
             <?php endif; ?>
@@ -41,12 +41,12 @@
                 <?php if ($i == $page): ?>
                     <li class="paging"><a><?php echo $i; ?></a></li>
                 <?php else: ?>
-                    <li class="paging"><a href="./users?p=<?php print $i; ?>"><?php echo $i ?></a></li>
+                    <li class="paging"><a href="./users?p=<?php print $i; ?>#users"><?php echo $i ?></a></li>
                 <?php endif; ?>
             <?php endfor; ?>
 
             <?php if ($page < $max_page): ?>
-                <li class="paging"><a href="./users?p=<?php print($page + 1); ?>">次へ</a></li>
+                <li class="paging"><a href="./users?p=<?php print($page + 1); ?>#users">次へ</a></li>
                 <?php else: ?>
                     <li class="paging">次へ</li>
             <?php endif; ?>

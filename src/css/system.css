@@ -196,3 +196,12 @@ main {
     display:inline-block;
     background-color: rgba(238, 59, 44, 0.4);
   }
+
+  .posts_message {
+    font-family: Noto Sans JP;
+    font-style: normal;
+    font-size: 14px;
+    color: #fff;
+    display:inline-block;
+    background-color: rgba(31, 15, 131, 0.49);
+  }

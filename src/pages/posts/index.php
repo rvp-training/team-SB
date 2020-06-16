@@ -16,6 +16,10 @@
     <?php include('../../components/posts/header.php'); ?>
     <?php include('../../components/posts/sidebar.php'); ?>
     <main>
+    <?php if ( isset( $_SESSION['posts_message'] ) ): ?>
+        <p class="posts_message">&emsp;<?php echo $_SESSION['posts_message'];?>&emsp;</p>
+        <?php unset( $_SESSION['posts_message'] );?>
+    <?php endif; ?>
         <!--検索フォーム -->
         <form action="http://localhost/pages/posts/search#<?php echo $_GET['category'] ?>" method="GET">
         <input class="form-text" type="search" id="tag" name="tag" placeholder="タグを入れて検索" required>

@@ -1,12 +1,12 @@
 <?php
-    session_start();
+session_start();
+if(isset($_SESSION['user_id']) && $_SESSION['admin_flag']===1){
 
-    // if (!isset($_SESSION['edit'])){
-    //     header('Location: index.php');
-    //     exit();
-    // }       
-?>
-
+}else{
+    header('Location: ../../login');
+          exit;
+        }
+        ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -68,15 +68,4 @@
             </div>   
         </main>
     </body>
-</html>
-
-
-
-
-
-
-
-
-
-             
-        
+</html>      

@@ -6,16 +6,14 @@ try{
 } catch(PDOException $e){
     echo 'DB接続エラー; ' . $e->getMessage();
 }
-
 // DB接続 
-
 if (isset($_POST['upload'])) {
     $sql = "INSERT INTO images(image_1, image_2, image_3, image_4, image_5) VALUES (?, ?, ?, ?, ?) RETURNING id";
     $stmt = $db->prepare($sql);
     for ($i = 0; $i < 5; ++$i) {
         $tmp_name = $_FILES['image']['tmp_name'][$i];
         $no = $i + 1;
-        if(is_null($tmp_name)){
+        if($tmp_name === ""){
             $stmt->bindValue($no, '', PDO::PARAM_STR);
             continue;
         }

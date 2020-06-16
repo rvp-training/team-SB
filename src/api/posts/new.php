@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 header('Content-Type: text/json; charset=UTF-8');
 
 try{
@@ -34,8 +37,7 @@ if (isset($_POST['upload'])) {
 $image_id = $result["id"];
 //posgtsテーブルのimage_idへimageテーブルのidを挿入
 
-$user_id = 1;
-// $user_id = $_SESSION['user_id'];
+$user_id = $_SESSION['user_id'];
 
 //postsテーブルのusers_idへログイン中のuserのidを代入
 // $user_id = 1;

@@ -45,7 +45,7 @@ ul{
 #description_frame {
     display: grid;
     grid-template-columns: 250px 500px 10px;
-    grid-template-rows: 20px 1fr 20px;
+    grid-template-rows: 20px 1fr 60px;
 }
 
 #user_name {

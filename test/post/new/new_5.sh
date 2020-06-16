@@ -5,6 +5,10 @@ curl http://localhost/api/posts/new \
     -X POST \
     -H 'Content-Type:multipart/form-data' \
     -F 'image[]=@./images/5edf2e2896e29.jpeg' \
+    -F 'image[]=dev/null;filename=' \
+    -F 'image[]=dev/null;filename=' \
+    -F 'image[]=dev/null;filename=' \
+    -F 'image[]=dev/null;filename=' \
     -F 'upload=Upload' \
     -F 'text=Text' \
     -F 'tag=Tag' \

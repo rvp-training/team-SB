@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 header('Content-Type: text/json; charset=UTF-8');
 
 try{
@@ -6,16 +9,14 @@ try{
 } catch(PDOException $e){
     echo 'DB接続エラー; ' . $e->getMessage();
 }
-
 // DB接続 
-
 if (isset($_POST['upload'])) {
     $sql = "INSERT INTO images(image_1, image_2, image_3, image_4, image_5) VALUES (?, ?, ?, ?, ?) RETURNING id";
     $stmt = $db->prepare($sql);
     for ($i = 0; $i < 5; ++$i) {
         $tmp_name = $_FILES['image']['tmp_name'][$i];
         $no = $i + 1;
-        if(is_null($tmp_name)){
+        if($tmp_name === ""){
             $stmt->bindValue($no, '', PDO::PARAM_STR);
             continue;
         }
@@ -36,8 +37,7 @@ if (isset($_POST['upload'])) {
 $image_id = $result["id"];
 //posgtsテーブルのimage_idへimageテーブルのidを挿入
 
-$user_id = 1;
-// $user_id = $_SESSION['user_id'];
+$user_id = $_SESSION['user_id'];
 
 //postsテーブルのusers_idへログイン中のuserのidを代入
 // $user_id = 1;

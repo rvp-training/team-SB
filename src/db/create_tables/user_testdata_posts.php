@@ -2,7 +2,7 @@
 try{
     $db = new PDO('pgsql:dbname=postgres;host=db','postgres','password');
 
-    $sql = "INSERT INTO users VALUES (1,'test','企画','部長','test@gmail.com', 'testtesttest',0,0);
+    $sql = "INSERT INTO users VALUES (1,'kanri','管理部','部長','kanri@gmail.com', 'testtesttest',0,1);
     ";
 
 

@@ -24,7 +24,7 @@ $start_no = ($now - 1) * $max; // 配列の何番目から取得すればよい�
 $name = $_GET["name"] ;
 $name = '%'.$name.'%';
 
-$prepare = $dbh->prepare('SELECT * FROM users WHERE name LIKE :name AND delete_flag = 0 LIMIT :max_p OFFSET :start_no;');
+$prepare = $dbh->prepare('SELECT * FROM users WHERE name LIKE :name AND delete_flag = 0 ORDER BY id LIMIT :max_p OFFSET :start_no;');
 
 $prepare->bindValue(':name',$name,PDO::PARAM_STR);
 $prepare->bindValue(':max_p',$max,PDO::PARAM_INT);

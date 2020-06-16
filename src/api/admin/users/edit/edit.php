@@ -31,11 +31,8 @@ $prepare->execute();
 $result = $prepare->rowCount();
 
 if($result === 1){
-echo "変更完了しました";
+    echo "変更完了しました";
 } else {
     echo "変更に失敗しました";
 }
 ?>
-
-
-

@@ -22,7 +22,7 @@ if(isset($_SESSION['user_id']) && $_SESSION['admin_flag']===1){
             <?php
                 //GET /admin/users/edit API呼び出し
                 $curl = curl_init();
-                curl_setopt($curl, CURLOPT_URL, "http://web/api/admin/users/edit/edit_screen_test?id=".$_GET["id"]);
+                curl_setopt($curl, CURLOPT_URL, "http://web/api/admin/users/edit/edit_screen?id=".$_GET["id"]);
                 curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'GET');
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                 $response = curl_exec($curl);
@@ -31,7 +31,7 @@ if(isset($_SESSION['user_id']) && $_SESSION['admin_flag']===1){
             <div>
                 <p class="user-edit-title">ユーザー情報の編集</p>
 
-            <form action="confirm.php" method="post">
+            <form action="confirm" method="post">
                 <dl>
                     <dt class="user-edit-content">氏名</dt>
                     <dd>
@@ -77,7 +77,6 @@ if(isset($_SESSION['user_id']) && $_SESSION['admin_flag']===1){
                         } else {
                         echo (htmlspecialchars($result[0]['pass'], ENT_QUOTES));
                         }?>" pattern="^[a-zA-Z0-9-_]+$" required/>
-                        <!-- patternを追加 -->
                         </dd>
                 </dl>
                     <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">

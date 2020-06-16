@@ -6,7 +6,7 @@ try{
         id serial UNIQUE PRIMARY KEY NOT NULL,
         user_id int REFERENCES users(id),
         title varchar(255) NOT NULL,
-        text varchar(255),
+        text varchar(1000),
         tag varchar(255),
         image_id int NOT NULL,
         category_id int REFERENCES categories(id) NOT NULL,

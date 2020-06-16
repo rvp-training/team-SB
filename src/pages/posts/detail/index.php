@@ -71,40 +71,36 @@
                 <?php endfor ?>
             </ul>
         </div>
-        <div>
-            <div id="description_frame">
-                <p id="user_name"><?php print $main["name"]."@";
-                                        print $main["department"];
-                                        print $main["position"]."："; 
-                                        if ($main["delete_flag"] === 1){
-                                            print "(退職済み)"; } ?></p>
-                <p id="title"><?php print $main["title"] ?></p>
-                <p id="text"><?php print $main["text"] ?></p>
-                <p id="tag"><?php print $main["tag"] ?></p>
+            <span class="user_name"><?php print $main["name"]."@";
+                                    print $main["department"];
+                                    print $main["position"]."："; 
+                                    if ($main["delete_flag"] === 1){
+                                        print "(退職済み)"; } ?></span>
+            <span class="title"><?php print $main["title"] ?></span>
+            <div class="text-container" style="height: 300px; margin:15px 170px;">
+                <div class="text"><?php print $main["text"] ?></div>
+                <p class="tag"><?php print $main["tag"] ?></p>
             </div>
             <br>
             <?php foreach ($comments as $key => $value) : ?>
-            <div id="comment_frame">
-                <p id="comment">コメント：</p>
-                <p class="content"><?php print $comments[$key]["content"] ?></p>
-                <p class="comment_user_name"><?php print $comments[$key]["name"]."@";
-                                                    print $comments[$key]["department"];
-                                                    print $comments[$key]["position"]; 
-                                                    if ($comments[$key]["delete_flag"] === 1){
-                                                    print "(退職済み)"; }?></p>
-            </div>
+                <div id="comment_frame">
+                    <p id="comment">コメント：</p>
+                    <p class="content"><?php print $comments[$key]["content"] ?></p>
+                    <p class="comment_user_name"><?php print $comments[$key]["name"]."@";
+                                                        print $comments[$key]["department"];
+                                                        print $comments[$key]["position"]; 
+                                                        if ($comments[$key]["delete_flag"] === 1){
+                                                        print "(退職済み)"; }?></p>
+                </div>
             <?php endforeach ?>
-            <div class="input_frame">
                 <div class="input_form">
                     <form action="http://localhost/pages/posts/detail/comments.php" method="POST">
-                        <input class="form-text" id="content" name="content" maxlength="150" placeholder="コメントを入力してください" required>
+                        <input class="form-text" id="content" name="content" style="width:500px; height:20px;" maxlength="150" placeholder="コメントを入力してください" required>
                         <input type="hidden" name="post_id" value="<?php print $_GET['id']?>">
                         <input type="hidden" name="user_id" value="<?php print $_SESSION['user_id']?>">
                         <input type="submit" value="投稿">
                     </form>
                 </div>
-            </div>
-        </div>
         <?php curl_close($curl); ?>
     </main>
 </body>

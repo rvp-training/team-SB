@@ -79,7 +79,7 @@
                                         if ($main["delete_flag"] === 1){
                                             print "(退職済み)"; } ?></p>
                 <p id="title"><?php print $main["title"] ?></p>
-                <p id="text"><?php print $main["text"] ?></p>
+                <p id="text"><?php print nl2br(htmlspecialchars($main["text"])) ?></p>
                 <p id="tag"><?php print $main["tag"] ?></p>
             </div>
             <br>

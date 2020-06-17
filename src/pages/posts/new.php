@@ -28,7 +28,7 @@
                 <dd><input class="form-input" type="text" name="title" maxlength="30" placeholder="タイトルを入力してください" required></input></dd>
                 <br>
                 <dt>テキスト</dt>
-                <dd><input class="form-input" type="text" name="text" maxlength="1000" placeholder="テキストを入力してください"></input></dd>
+                <dd><textarea class="form-input" name="text" rows="5" maxlength="1000" placeholder="テキストを入力してください"></textarea></dd>
                 <br>
                 <dt>タグ</dt>
                 <dd><input class="form-input" type="text" name="tag" maxlength="90" placeholder="タグを入力してください"></input></dd>

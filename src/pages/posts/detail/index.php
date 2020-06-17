@@ -73,23 +73,23 @@
         </div>
         <div>
             <div id="description_frame">
-                <p id="user_name"><?php print $main["name"]."@";
-                                        print $main["department"];
-                                        print $main["position"]."："; 
+                <p id="user_name"><?php print htmlspecialchars( $main["name"])."@";
+                                        print htmlspecialchars( $main["department"]);
+                                        print htmlspecialchars( $main["position"]."："); 
                                         if ($main["delete_flag"] === 1){
                                             print "(退職済み)"; } ?></p>
-                <p id="title"><?php print $main["title"] ?></p>
-                <p id="text"><?php print $main["text"] ?></p>
-                <p id="tag"><?php print $main["tag"] ?></p>
+                <p id="title"><?php print htmlspecialchars( $main["title"] )?></p>
+                <p id="text"><?php print nl2br(htmlspecialchars($main["text"])) ?></p>
+                <p id="tag"><?php print htmlspecialchars( $main["tag"] )?></p>
             </div>
             <br>
             <?php foreach ($comments as $key => $value) : ?>
             <div id="comment_frame">
                 <p id="comment">コメント：</p>
-                <p class="content"><?php print $comments[$key]["content"] ?></p>
-                <p class="comment_user_name"><?php print $comments[$key]["name"]."@";
-                                                    print $comments[$key]["department"];
-                                                    print $comments[$key]["position"]; 
+                <p class="content"><?php print htmlspecialchars( $comments[$key]["content"]) ?></p>
+                <p class="comment_user_name"><?php print htmlspecialchars( $comments[$key]["name"])."@";
+                                                    print htmlspecialchars( $comments[$key]["department"]);
+                                                    print htmlspecialchars( $comments[$key]["position"]); 
                                                     if ($comments[$key]["delete_flag"] === 1){
                                                     print "(退職済み)"; }?></p>
             </div>

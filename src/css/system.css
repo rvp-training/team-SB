@@ -156,6 +156,10 @@ main {
     margin-left: 200px;
 }
 
+input, textarea {   
+    font-family: Noto Sans JP;
+}
+
 .form-text{
     font-size: 16px;
     padding: 10.130px;

@@ -79,9 +79,21 @@
             <?php foreach ( $result as $key => $value ) : ?>
                 <div class="item">
                     <img src="../../../images/<?php print $result[$key]['image_1']; ?>" width="220" height="175" alt="image not found">
-                    <p class="title"><?php print $result[$key]['title']; ?></p>
-                    <p><?php print $result[$key]['tag']; ?></p>
-                    <p><?php print $result[$key]['name']; ?></p>
+                    <?php if(mb_strlen($result[$key]['title']) > 15): ?>
+                            <p class="title"><?php print mb_substr(htmlspecialchars($result[$key]['title']),0,15); ?>...</p>           
+                        <?php else: ?>
+                            <p class="title"><?php print htmlspecialchars($result[$key]['title']); ?></p>
+                        <?php endif; ?>
+                        <?php if(mb_strlen($result[$key]['tag']) > 15): ?>
+                            <p class="title"><?php print mb_substr(htmlspecialchars($result[$key]['tag']),0,15); ?>...</p>           
+                        <?php else: ?>
+                            <p class="title"><?php print htmlspecialchars($result[$key]['tag']); ?></p>
+                        <?php endif; ?>
+                        <?php if(mb_strlen($result[$key]['name']) > 15): ?>
+                            <p class="title"><?php print mb_substr(htmlspecialchars($result[$key]['name']),0,15); ?>...</p>           
+                        <?php else: ?>
+                            <p class="title"><?php print htmlspecialchars($result[$key]['name']); ?></p>
+                        <?php endif; ?>
                     <button onclick="location.href='http://localhost/pages/posts/detail?id=<?php $result[$key]['posts.id']; ?>'" class="detail_button">detail</button>
                 </div>
             <?php endforeach; ?>        

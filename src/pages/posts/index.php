@@ -18,7 +18,7 @@
     <main>
         <!--検索フォーム -->
         <form action="http://localhost/pages/posts/search#<?php echo $_GET['category'] ?>" method="GET">
-        <input class="form-text" type="search" id="tag" name="tag" placeholder="タグを入れて検索" required>
+        <input class="form-text" type="search" id="tag" name="tag" placeholder="タグを入れて検索" maxlength="90" required>
         <input type="hidden" name="category" value="<?php echo $_GET['category'] ?>">
         <input type="submit" value="検索">
         </form>

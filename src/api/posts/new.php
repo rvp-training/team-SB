@@ -27,7 +27,7 @@ if (isset($_POST['upload'])) {
             $stmt->bindValue($no, $image, PDO::PARAM_STR);
         } else {
             $_SESSION['posts_message'] = "アップロードに失敗しました...";
-            header('Location: http://localhost/pages/posts?category='.$category_id.'#'.$category_id);
+            header('Location: ../pages/posts?category='.$category_id.'#'.$category_id);
         }
     }
     $stmt->execute();
@@ -63,9 +63,9 @@ $preparecontent->bindValue(':category_id',$category_id,PDO::PARAM_INT);
 $res = $preparecontent->execute();
 
 if(!$res){$_SESSION['posts_message'] = "投稿に失敗しました...";
-    header('Location: http://localhost/pages/posts?category='.$category_id.'#'.$category_id);
+    header('Location: ../pages/posts?category='.$category_id.'#'.$category_id);
 }else{
     $_SESSION['posts_message'] = "投稿に成功しました！";
-    header('Location: http://localhost/pages/posts?category='.$category_id.'#'.$category_id);
+    header('Location: ../pages/posts?category='.$category_id.'#'.$category_id);
 }
 ?>

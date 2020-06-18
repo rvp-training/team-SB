@@ -9,10 +9,10 @@
 
     if ($response == "変更完了しました"){
         $_SESSION['message'] = "削除に成功しました";
-        header('Location: http://localhost/pages/admin/index#top');
+        header('Location: ../index#top');
     } else {
         $_SESSION['message'] = "削除に失敗しました";
-        header('Location: http://localhost/pages/admin/index#top');
+        header('Location: ../index#top');
     }
 ?>
         

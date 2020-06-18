@@ -1,1 +1,1 @@
-<?php header('Location: http://localhost/pages/' . $_POST['redirect'], true, 307); ?>
+<?php header('Location: ./' . $_POST['redirect'], true, 307); ?>

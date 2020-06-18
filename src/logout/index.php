@@ -16,7 +16,7 @@ if (isset($_COOKIE["PHPSESSID"])) {
 }
 
 header("HTTP/1.1 301 Moved Permanently");
-header('Location: http://localhost/pages/login');
+header('Location: ../pages/login');
 
 
 if(isset($_SESSION['user_id'])){

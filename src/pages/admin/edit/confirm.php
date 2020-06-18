@@ -11,8 +11,8 @@ if(isset($_SESSION['user_id']) && $_SESSION['admin_flag']===1){
 <html>
     <head>
             <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-                <link href="http://localhost/css/system.css" rel="stylesheet" type="text/css" />
-                <link href="http://localhost/css/users.css" rel="stylesheet" type="text/css" /> 
+                <link href="../../../css/system.css" rel="stylesheet" type="text/css" />
+                <link href="../../../css/users.css" rel="stylesheet" type="text/css" /> 
     </head>
     <body>
         <?php include('../../../components/admin/header.php'); ?>
@@ -47,7 +47,7 @@ if(isset($_SESSION['user_id']) && $_SESSION['admin_flag']===1){
             </table>
             <div class="center">
                 <div class="flex">
-                <form action="http://localhost/pages/admin/edit?id=<?php echo htmlspecialchars ( $_POST['id'] )?>" method="post" enctype="multipart/form-data">
+                <form action="./?id=<?php echo htmlspecialchars ( $_POST['id'] )?>" method="post" enctype="multipart/form-data">
                     <input type="submit" class="button" value="戻る" />
                     <input type="hidden" name="name" value="<?php echo htmlspecialchars ($_POST['name']) ?>">
                     <input type="hidden" name="department" value="<?php echo htmlspecialchars ( $_POST['department']) ?>">
@@ -55,7 +55,7 @@ if(isset($_SESSION['user_id']) && $_SESSION['admin_flag']===1){
                     <input type="hidden" name="mail" value="<?php echo htmlspecialchars ( $_POST['mail']) ?>">
                     <input type="hidden" name="pass" value="<?php echo htmlspecialchars ( $_POST['pass']) ?>">
                 </form>
-                <form action="http://localhost/pages/admin/edit/complete.php" method="post" enctype="multipart/form-data">
+                <form action="./complete" method="post" enctype="multipart/form-data">
                     <input type="submit" class="button" value="更新" />
                     <input type="hidden" name="id" value="<?php echo htmlspecialchars ( $_POST['id'] )?>">
                     <input type="hidden" name="name" value="<?php echo htmlspecialchars ( $_POST['name'] )?>">

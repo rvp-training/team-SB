@@ -11,8 +11,8 @@ if(isset($_SESSION['user_id']) && $_SESSION['admin_flag']===1){
 <html>
 <head>
          <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-         <link href="http://localhost/css/system.css" rel="stylesheet" type="text/css" />     
-         <link href="http://localhost/css/users.css" rel="stylesheet" type="text/css" />
+         <link href="../../css/system.css" rel="stylesheet" type="text/css" />     
+         <link href="../../css/users.css" rel="stylesheet" type="text/css" />
      
 </head>
 <body>
@@ -20,7 +20,7 @@ if(isset($_SESSION['user_id']) && $_SESSION['admin_flag']===1){
     <?php include('../../components/admin/sidebar.php'); ?>
     <main>
         <!--検索フォーム -->
-        <form action="http://localhost/pages/admin/search#users" method="GET">
+        <form action="../../pages/admin/search#users" method="GET">
         <input class="form-text" type="search" name="name" id="name" size="30" maxlength="30" placeholder="氏名を入力" required>
         <input type="submit" value="検索">
         </form>
@@ -93,10 +93,10 @@ if(isset($_SESSION['user_id']) && $_SESSION['admin_flag']===1){
                         <?php print htmlspecialchars($result[$key]["mail"]);?> 
                     </td>
                     <td>
-                        <button onclick="location.href='http://localhost/pages/admin/edit?id=<?php print $result[$key]['id'] ?>'" class="edit_button">編集</button>
+                        <button onclick="location.href='./edit?id=<?php print $result[$key]['id'] ?>'" class="edit_button">編集</button>
                     </td>
                     <td>
-                        <button onclick="location.href='http://localhost/pages/admin/delete/confirm?id=<?php print $result[$key]['id'] ?>'" class="delete_button">削除</button>
+                        <button onclick="location.href='./delete/confirm?id=<?php print $result[$key]['id'] ?>'" class="delete_button">削除</button>
                     </td>
                 </tr>
             <?php endforeach; ?>

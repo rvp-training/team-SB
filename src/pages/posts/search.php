@@ -8,8 +8,8 @@
 <html>
 <head>
          <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-              <link href="http://localhost/css/system.css" rel="stylesheet" type="text/css" />
-              <link href="http://localhost/css/posts.css" rel="stylesheet" type="text/css" />
+              <link href="../../css/system.css" rel="stylesheet" type="text/css" />
+              <link href="../../css/posts.css" rel="stylesheet" type="text/css" />
      
 </head>
 <body>
@@ -17,7 +17,7 @@
     <?php include('../../components/posts/sidebar.php'); ?>
     <main>
         <!--検索フォーム -->
-        <form action="http://localhost/pages/posts/search#<?php echo $_GET['category'] ?>" method="GET">
+        <form action="../../pages/posts/search#<?php echo $_GET['category'] ?>" method="GET">
         <input class="form-text" type="search" id="tag" name="tag" placeholder="タグを入れて検索" maxlength="90" required>
         <input type="hidden" name="category" value="<?php echo $_GET['category'] ?>">
         <input type="submit" value="検索">
@@ -94,7 +94,7 @@
                         <?php else: ?>
                             <p class="title"><?php print htmlspecialchars($result[$key]['name']); ?></p>
                         <?php endif; ?>
-                    <button onclick="location.href='http://localhost/pages/posts/detail?id=<?php $result[$key]['posts.id']; ?>'" class="detail_button">detail</button>
+                    <button onclick="location.href='../../pages/posts/detail?id=<?php $result[$key]['posts.id']; ?>'" class="detail_button">detail</button>
                 </div>
             <?php endforeach; ?>        
         </div>

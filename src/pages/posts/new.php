@@ -8,17 +8,17 @@
 <html>
 <head>
          <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-              <link href="http://localhost/css/system.css" rel="stylesheet" type="text/css" />
-              <link href="http://localhost/css/new.css" rel="stylesheet" type="text/css" />
+              <link href="../../css/system.css" rel="stylesheet" type="text/css" />
+              <link href="../../css/new.css" rel="stylesheet" type="text/css" />
               <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-              <script src="http://localhost/js/new.js"></script>
+              <script src="../../js/new.js"></script>
      
 </head>
 <body>
     <?php include('../../components/posts/header.php'); ?>
     <?php include('../../components/posts/sidebar.php'); ?>
     <main>
-        <form action="http://localhost/api/posts/new" method="post" enctype="multipart/form-data">       
+        <form action="../../api/posts/new" method="post" enctype="multipart/form-data">       
             <p>送信ファイル</p>
             <input type="file" name="image[]" multiple = "multiple" required>
             <input type="file" name="image[]" multiple = "multiple" >

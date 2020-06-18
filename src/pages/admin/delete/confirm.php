@@ -11,9 +11,9 @@ if(isset($_SESSION['user_id']) && $_SESSION['admin_flag']===1){
 <html>
 <head>
          <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-              <link href="http://localhost/css/system.css" rel="stylesheet" type="text/css" />
-              <link href="http://localhost/css/users.css" rel="stylesheet" type="text/css" />
-              <script type="text/javascript" src="http://localhost/js/delete.js"></script>
+              <link href="../../../css/system.css" rel="stylesheet" type="text/css" />
+              <link href="../../../css/users.css" rel="stylesheet" type="text/css" />
+              <script type="text/javascript" src="../../../js/delete.js"></script>
      
 </head>
 <body>
@@ -60,7 +60,7 @@ if(isset($_SESSION['user_id']) && $_SESSION['admin_flag']===1){
             <?php curl_close($curl); ?>
             <br>
             <div class="center">
-                <button onclick="location.href='http://localhost/pages/admin/delete/complete?id=<?php print $_GET["id"] ?>'"
+                <button onclick="location.href='./complete?id=<?php print $_GET["id"] ?>'"
                 class="delete_button">削除</button>
             </div>            
 

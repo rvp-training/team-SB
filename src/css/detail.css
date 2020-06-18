@@ -107,7 +107,7 @@ ul{
 }
 
 .centered_div {
-    position: absolute;
+    position: relative;
     left: 50%;
     transform: translate(-50%,0);
 }

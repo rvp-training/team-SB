@@ -94,8 +94,8 @@
                         <?php else: ?>
                             <p class="title"><?php print htmlspecialchars($result[$key]['name']); ?></p>
                         <?php endif; ?>
-                    <button onclick="location.href='../../pages/posts/detail?id=<?php $result[$key]['posts.id']; ?>'" class="detail_button">detail</button>
-                </div>
+                    <button onclick="location.href='./detail?id=<?php print $result[$key]['id']; ?>'" class="detail_button">detail</button>
+                   </div>
             <?php endforeach; ?>        
         </div>
     </main>

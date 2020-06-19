@@ -28,6 +28,7 @@ ON users.id = posts.user_id
 JOIN images 
 ON posts.image_id = images.id
 WHERE category_id = :category
+ORDER BY posts.time DESC
 LIMIT :max_p OFFSET :start_no;');
 
 $prepare->bindValue(':category',(int)$category,PDO::PARAM_INT);

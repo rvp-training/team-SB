@@ -13,6 +13,7 @@ try{
 $max = 20;
 $category = $_GET["category"];
 $tag = $_GET["tag"];
+$tag = '%'.$tag.'%';
  
 if(!isset($_GET['p']) || $_GET['p'] == 0 ){ // $_GET['p'] はURLに渡された現在のページ数
     $now = 1; // 設定されてない場合は1ページ目にする
@@ -28,7 +29,8 @@ ON users.id = posts.user_id
 JOIN images 
 ON posts.image_id = images.id
 WHERE category_id = :category
-AND tag = :tag
+AND tag LIKE :tag
+ORDER BY posts.time DESC
 LIMIT :max_p OFFSET :start_no;');
 
 

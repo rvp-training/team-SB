@@ -10,13 +10,11 @@ try{
 }
 
 //DBからとってきたデータを配列として格納
-// $_POST["user_id"] = 1;
-
 $post_id = $_POST["post_id"];
 $user_id = $_POST["user_id"];
 $content = $_POST["content"];
 
-$prepare = $dbh->prepare("INSERT INTO comments(post_id, user_id, content, time) VALUES( :post_id, :user_id, :content, now());");
+$prepare = $dbh->prepare("INSERT INTO comments(post_id, user_id, content, time) VALUES ( :post_id, :user_id, :content, now());");
 
 $prepare->bindValue(':post_id',(int)$post_id,PDO::PARAM_INT);
 $prepare->bindValue(':user_id',(int)$user_id,PDO::PARAM_INT);

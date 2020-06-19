@@ -1,0 +1,1 @@
+curl -s http://localhost/db/create_tables/data_insert.php

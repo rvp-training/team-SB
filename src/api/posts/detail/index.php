@@ -28,7 +28,8 @@ $main = $prepare->fetchALL(PDO::FETCH_ASSOC);
 $prepare1 = $dbh->prepare('SELECT comments.id, name, department, position, delete_flag, content, time
 FROM comments JOIN users
 ON users.id = comments.user_id
-WHERE post_id = :post_id;');
+WHERE post_id = :post_id
+ORDER BY comments.time ASC;');
 
 $prepare1->bindValue(':post_id',(int)$post_id,PDO::PARAM_INT);
 

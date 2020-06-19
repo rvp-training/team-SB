@@ -13,6 +13,7 @@ try{
 $max = 20;
 $category = $_GET["category"];
 $tag = $_GET["tag"];
+$tag = '%'.$tag.'%';
 
 if(!isset($_GET['p']) || $_GET['p'] == 0 ){ // $_GET['p'] はURLに渡された現在のページ数
     $now = 1; // 設定されてない場合は1ページ目にする
@@ -20,7 +21,7 @@ if(!isset($_GET['p']) || $_GET['p'] == 0 ){ // $_GET['p'] はURLに渡された�
     $now = $_GET['p'];
 }
 
-$prepare = $dbh->prepare('SELECT id FROM posts WHERE category_id = :category AND tag = :tag;');
+$prepare = $dbh->prepare('SELECT id FROM posts WHERE category_id = :category AND tag LIKE :tag;');
 
 $prepare->bindValue(':category',(int)$category,PDO::PARAM_INT);
 $prepare->bindValue(':tag',$tag,PDO::PARAM_STR);
